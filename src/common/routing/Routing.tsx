@@ -1,15 +1,19 @@
 import {Route, Routes} from "react-router";
 import {MainPage} from "@/app/ui/MainPage/MainPage.tsx";
-import {MoviesPage} from "@/features/movies/ui/MoviesPage/MoviesPage.tsx";
-import {ProfilePage} from "@/features/auth/ui/ProfilePage/ProfilePage.tsx";
+import {CategoryPage} from "@/features/category-movies/ui/CategoryPage/CategoryPage.tsx";
 import {PageNotFound} from "@/common/components";
 import {Path} from "@/common/routing/paths.ts";
+import {FilteredPage} from "@/features/filtered-movies/ui/FilteredPage/FilteredPage.tsx";
+import {Search} from "@/features/search/ui/Search/Search.tsx";
+import {Favorites} from "@/features/favorites/ui/Favorites/Favorites.tsx";
 
 export const Routing = () => (
   <Routes>
     <Route path={Path.Main} element={<MainPage />} />
-    <Route path={Path.Movies} element={<MoviesPage />} />
-    <Route path={Path.Profile} element={<ProfilePage />} />
+    <Route path={Path.Movies} element={<CategoryPage />} />
+    <Route path={Path.Filtered} element={<FilteredPage />} />
+    <Route path={Path.Search} element={<Search />} />
+    <Route path={Path.Favorites} element={<Favorites />} />
     <Route path={Path.NotFound} element={<PageNotFound />} />
   </Routes>
 )

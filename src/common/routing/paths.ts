@@ -1,6 +1,8 @@
 export const Path = {
   Main: '/',
   Movies: '/movies',
-  Profile: '/profile',
+  Filtered: '/filtered-movies',
+  Search: 'search',
+  Favorites: 'favorites',
   NotFound: '*',
 } as const

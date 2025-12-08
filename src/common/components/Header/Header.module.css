@@ -1,13 +1,45 @@
 .container {
-  border-bottom: 1px solid black;
-  padding-left: 100px;
+  outline: aqua 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
 }
 
 .list {
   display: flex;
-  gap: 40px;
+  list-style: none;
+}
+
+.item {
+  padding: 0 15px;
+  position: relative;
+}
+
+.item + .item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 2px;
+  height: 16px;
+  background-color: #d0d0d0;
+}
+
+.link {
+  color: black;
+  text-decoration: none;
+}
+
+.link:hover {
+  color: darkcyan;
+  cursor: pointer;
 }
 
 .activeLink {
-  font-weight: bold;
+  border: 1px solid #eeeeee;
+  padding: 5px 10px;
+  background-color: #eeeeee;
+  border-radius: 15px;
 }

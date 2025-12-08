@@ -1,6 +1,8 @@
 import { NavLink } from 'react-router'
 import s from './Header.module.css'
 import {Path} from "@/common/routing/paths.ts";
+import {TmdbLogo} from "@/common/components";
+import clsx from 'clsx'
 
 const navItems = [
   { to: Path.Main, label: 'Main' },
@@ -11,15 +13,21 @@ const navItems = [
 ]
 
 export const Header = () => {
+
   return (
     <header className={s.container}>
+      <NavLink to={Path.Main}>
+        <TmdbLogo/>
+      </NavLink>
       <nav>
         <ul className={s.list}>
           {navItems.map(item => (
-            <li key={item.to}>
+            <li className={s.item} key={item.to}>
               <NavLink
                 to={item.to}
-                className={({ isActive }) => `link ${isActive ? s.activeLink : ''}`}
+                className={({ isActive }) =>
+                  clsx(s.link, isActive && s.activeLink)
+                }
               >
                 {item.label}
               </NavLink>

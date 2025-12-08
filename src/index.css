@@ -1,6 +1,45 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
 
+  /* базовые */
+  --bg-color: #f5f5f5;
+  --text-color: #111;
+  --accent-color: #008B8BFF;
+
+  /* header */
+  --header-bg: #f5f5f5;
+  --header-divider: #e6e5e5;
+  --header-pill-bg: #c3c2c2;
+
+  /* кнопка переключения темы */
+  --theme-btn-bg: #ffffff;
+  --theme-btn-border: #d0d0d0;
+}
+
+:root[data-theme='dark'] {
+  --bg-color: #050b16;
+  --text-color: #f5f5f5;
+  --accent-color: #008B8BFF;
+
+  --header-divider: #1d2840;
+  --header-bg: #050b16;
+  --header-pill-bg: #111a2b;
+
+  --theme-btn-bg: #111a2b;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }

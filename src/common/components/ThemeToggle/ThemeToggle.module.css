@@ -1,0 +1,16 @@
+.btn {
+  width: 40px;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid var(--header-pill-bg);
+  border-radius: 50%;
+  background-color:  var(--header-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--accent-color);
+}

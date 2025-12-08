@@ -1,9 +1,25 @@
+.header {
+  background-color: var(--header-divider);
+  padding: 20px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  height: 80px;
+}
+
 .container {
-  outline: aqua 1px solid;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 30px;
+  justify-content: space-between;
+
+  max-width: 1200px;
+  width: 100%;
+  min-height: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
 }
 
 .list {
@@ -24,22 +40,21 @@
   transform: translateY(-50%);
   width: 2px;
   height: 16px;
-  background-color: #d0d0d0;
+  background-color:  var(--header-pill-bg);
 }
 
 .link {
-  color: black;
+  color: var(--text-color);;
   text-decoration: none;
 }
 
 .link:hover {
-  color: darkcyan;
+  color: var(--accent-color);
   cursor: pointer;
 }
 
 .activeLink {
-  border: 1px solid #eeeeee;
   padding: 5px 10px;
-  background-color: #eeeeee;
+  background-color: var(--header-pill-bg);
   border-radius: 15px;
 }

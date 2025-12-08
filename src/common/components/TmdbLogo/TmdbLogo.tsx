@@ -5,6 +5,6 @@ type TmdbLogoProps =  {
   width?: number;
 }
 
-export const TmdbLogo = ({width = 120}: TmdbLogoProps) => {
+export const TmdbLogo = ({width = 180}: TmdbLogoProps) => {
   return <img className={s.logo} src={tmdbLogo} width={width} alt={'logo'} />
 };

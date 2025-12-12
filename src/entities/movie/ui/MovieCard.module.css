@@ -45,6 +45,10 @@
   opacity: 1;
 }
 
+.movieDetailsVisible {
+  opacity: 1 !important;
+}
+
 .iconButton {
   width: 40px;
   height: 40px;
@@ -81,7 +85,6 @@
 .iconButton:hover {
   background-color: rgb(0, 139, 139, 0.8);
 }
-
 .iconButton:hover .tooltip {
   opacity: 1;
 }

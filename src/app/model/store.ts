@@ -1,15 +1,15 @@
 import { configureStore } from "@reduxjs/toolkit"
-import { appReducer, appSlice } from "./app-slice"
+import { appReducer, appSlice } from "./app-slice.ts"
 import { setupListeners } from "@reduxjs/toolkit/query"
-// import { baseApi } from "./baseApi"
+import {popularApi} from "@/features/category-movies/api/popularApi.ts";
 
 // создание store
 export const store = configureStore({
   reducer: {
     [appSlice.name]: appReducer,
-    // [baseApi.reducerPath]: baseApi.reducer,
+    [popularApi.reducerPath]: popularApi.reducer,
   },
-  // middleware: getDefaultMiddleware => getDefaultMiddleware().concat(baseApi.middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(popularApi.middleware),
 })
 
 setupListeners(store.dispatch)
@@ -19,6 +19,3 @@ export type RootState = ReturnType<typeof store.getState>
 // автоматическое определение типа метода dispatch
 export type AppDispatch = typeof store.dispatch
 
-// для возможности обращения к store в консоли браузера
-// @ts-ignore
-window.store = store

@@ -1,0 +1,1 @@
+export {loadFavoritesFromStorage} from './loadFavoritesFromStorage.ts'

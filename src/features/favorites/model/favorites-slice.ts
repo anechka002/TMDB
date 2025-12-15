@@ -1,12 +1,13 @@
 import type {MovieItem} from "@/features/category-movies/api/popularApi.types.ts";
 import {createSlice} from "@reduxjs/toolkit";
+import {loadFavoritesFromStorage} from "@/common/utils";
 
 type FavoritesState = {
   favoritesMovies: MovieItem[];
 };
 
 const initialState: FavoritesState = {
-  favoritesMovies: [],
+  favoritesMovies: loadFavoritesFromStorage(),
 };
 
 export const favoritesSlice = createSlice({

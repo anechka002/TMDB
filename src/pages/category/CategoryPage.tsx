@@ -1,11 +1,11 @@
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
+import {SectionTitle} from "@/common/components";
 
 export const CategoryPage = () => {
-
   return (
-    <div>
-      <h3>Popular Movies</h3>
+    <>
+      <SectionTitle title="Popular Movies"/>
       <CategoryList/>
-    </div>
+    </>
   );
 };

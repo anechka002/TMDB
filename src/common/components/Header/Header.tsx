@@ -1,8 +1,9 @@
 import { NavLink } from 'react-router'
 import s from './Header.module.css'
 import {Path} from "@/common/routing/paths.ts";
-import {ThemeToggle, TmdbLogo} from "@/common/components";
+import {TmdbLogo} from "@/common/components";
 import clsx from 'clsx'
+import {ThemeToggle} from "@/features/theme-toggle/ui/ThemeToggle.tsx";
 
 const navItems = [
   { to: Path.Main, label: 'Main' },

@@ -23,9 +23,18 @@ export const MovieCard = ({movie}: Props) => {
     selectIsFavorite(state, movie.id)
   );
 
+  const rating = movie.vote_average
+
   const className = clsx(
     s.movieDetails,
     isFavorite && s.movieDetailsVisible
+  )
+
+  const ratingClassName = clsx(
+    s.ratingBadge,
+    rating > 7 && s.ratingGood,
+    rating >= 5 && rating <= 7 && s.ratingMedium,
+    rating < 5 && s.ratingBad,
   )
 
   const handleOnToggleFavorite = () => {
@@ -39,6 +48,7 @@ export const MovieCard = ({movie}: Props) => {
           alt={movie.original_title}
           className={s.moviePoster}
         />
+        <div className={ratingClassName}>{rating.toFixed(1)}</div>
       </div>
 
       <div className={className}>

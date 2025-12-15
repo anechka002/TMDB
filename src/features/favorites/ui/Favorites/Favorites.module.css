@@ -1,0 +1,10 @@
+.favoritesCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.title {
+  margin-bottom: 15px;
+  font-size: 22px;
+}

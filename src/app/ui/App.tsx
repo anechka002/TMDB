@@ -25,7 +25,7 @@ function App() {
     if(saved && saved !== themeMode) {
       dispatch(changeThemeModeAC({themeMode: saved}));
     }
-  }, [themeMode, dispatch])
+  }, [])
 
   // при изменении стейта обновлять DOM и localStorage
   useEffect(() => {

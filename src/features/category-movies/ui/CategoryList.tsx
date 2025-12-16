@@ -1,16 +1,19 @@
-import {
-  useFetchPopularMoviesQuery
-} from "@/features/category-movies/api/popularApi.ts";
 import s from './CategoryList.module.css'
 import {MovieCard} from "@/entities/movie/ui/MovieCard.tsx";
+import type {
+  MovieItem
+} from "@/features/category-movies/api/moviesApi.types.ts";
 
-export const CategoryList = () => {
-  const {data} = useFetchPopularMoviesQuery()
+type Props = {
+  movies: MovieItem[]
+}
+
+export const CategoryList = ({movies}: Props) => {
 
   return (
     <section className={s.movieList}>
       <div className={s.movieCards}>
-        {data?.results.map(movie => (
+        {movies.map(movie => (
           <MovieCard key={movie.id} movie={movie}/>
         ))}
       </div>

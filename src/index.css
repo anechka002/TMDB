@@ -20,7 +20,7 @@
   /* header */
   --header-bg: #f5f5f5;
   --header-divider: #e6e5e5;
-  --header-pill-bg: #c3c2c2;
+  --header-pill-bg: #dcd8d8;
 
   /* кнопка переключения темы */
   --theme-btn-bg: #ffffff;
@@ -34,7 +34,7 @@
 
   --header-divider: #1d2840;
   --header-bg: #050b16;
-  --header-pill-bg: #111a2b;
+  --header-pill-bg: #3c4b6c;
 
   --theme-btn-bg: #111a2b;
 }

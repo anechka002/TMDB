@@ -1,6 +1,6 @@
 import type {
   MovieItem
-} from "@/features/category-movies/api/popularApi.types.ts";
+} from "@/features/category-movies/api/moviesApi.types.ts";
 
 
 export const loadFavoritesFromStorage = () => {

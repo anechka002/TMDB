@@ -1,7 +1,7 @@
 import {IMAGE_BASE_URL} from "@/common/config";
 import type {
   MovieItem
-} from "@/features/category-movies/api/popularApi.types.ts";
+} from "@/features/category-movies/api/moviesApi.types.ts";
 import s from './MovieCard.module.css'
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons"
 import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";

@@ -1,20 +1,20 @@
 import { configureStore } from "@reduxjs/toolkit"
 import { appReducer, appSlice } from "./app-slice.ts"
 import { setupListeners } from "@reduxjs/toolkit/query"
-import {popularApi} from "@/features/category-movies/api/popularApi.ts";
 import {
   favoritesReducer,
   favoritesSlice
 } from "@/features/favorites/model/favorites-slice.ts";
+import {moviesApi} from "@/features/category-movies/api/moviesApi.ts";
 
 // создание store
 export const store = configureStore({
   reducer: {
     [appSlice.name]: appReducer,
     [favoritesSlice.name]: favoritesReducer,
-    [popularApi.reducerPath]: popularApi.reducer,
+    [moviesApi.reducerPath]: moviesApi.reducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(popularApi.middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(moviesApi.middleware),
 })
 
 setupListeners(store.dispatch)

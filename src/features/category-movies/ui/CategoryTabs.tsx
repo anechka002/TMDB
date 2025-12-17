@@ -1,5 +1,5 @@
 import {NavLink} from "react-router";
-import {categoryTabs} from "@/features/category-movies/model/categoryTabs.ts";
+import {categories} from "@/features/category-movies/model/categories.ts";
 import {Path} from "@/common/routing";
 import clsx from "clsx";
 import s from './CategoryTabs.module.css'
@@ -7,7 +7,7 @@ import s from './CategoryTabs.module.css'
 export const CategoryTabs = () => {
   return (
     <div className={s.tabs}>
-      {categoryTabs.map((tab) => (
+      {categories.map((tab) => (
         <NavLink
           key={tab.type}
           to={`${Path.Movies}/${tab.type}`}
@@ -15,7 +15,7 @@ export const CategoryTabs = () => {
             clsx(s.tab, isActive && s.activeLink)
           }
         >
-          {tab.label}
+          {tab.tabLabel}
         </NavLink>
       ))}
     </div>

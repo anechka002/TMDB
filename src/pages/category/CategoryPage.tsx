@@ -6,20 +6,20 @@ import {
   useFetchMoviesByCategoryQuery
 } from "@/features/category-movies/api/moviesApi.ts";
 import type {CategoryType} from "@/features/category-movies/api/moviesApi.types.ts";
-import {categoryTabs} from "@/features/category-movies/model/categoryTabs.ts";
+import {categories} from "@/features/category-movies/model/categories.ts";
 
 export const CategoryPage = () => {
   const { categoryType = 'popular' } = useParams<{ categoryType: string }>();
 
   const {data} = useFetchMoviesByCategoryQuery({category: categoryType as CategoryType});
 
-  const categoryTitle = categoryTabs.find((tab) => tab.type === categoryType)?.label || 'Popular Movies'
+  const current =
+    categories.find(c => c.type === categoryType) ?? categories[0]
 
   return (
     <>
       <CategoryTabs/>
-      {/*<SectionTitle title='Popular Movies'/>*/}
-      <SectionTitle title={categoryTitle}/>
+      <SectionTitle title={current.title}/>
       <CategoryList movies={data?.results ?? []}/>
     </>
   );

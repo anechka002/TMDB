@@ -46,6 +46,13 @@
 .link {
   color: var(--text-color);;
   text-decoration: none;
+  border-radius: 15px;
+  padding: 5px 10px;
+}
+
+.link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0, 139, 139, 0.45);
 }
 
 .link:hover {
@@ -54,7 +61,5 @@
 }
 
 .activeLink {
-  padding: 5px 10px;
   background-color: var(--header-pill-bg);
-  border-radius: 15px;
 }

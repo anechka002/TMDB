@@ -8,7 +8,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+
   cursor: pointer;
+  user-select: none;
+}
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0, 139, 139, 0.45);
 }
 
 .btn:hover {

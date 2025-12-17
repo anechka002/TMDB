@@ -7,19 +7,28 @@
 
 .tab {
   padding: 8px 16px;
-  border-radius: 999px;
+
   border: 1px solid var(--header-pill-bg);
+  border-radius: 999px;
+
   color: var(--text-color);
   font-size: 16px;
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+
+  user-select: none;
+  cursor: pointer;
+}
+
+.tab:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px rgba(0, 139, 139, 0.45);
 }
 
 .tab:hover {
   background-color:  var(--header-pill-bg);
   color: var(--accent-color);
-  cursor: pointer;
 }
 
 .activeLink {

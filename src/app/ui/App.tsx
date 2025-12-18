@@ -1,5 +1,5 @@
 import s from './App.module.css'
-import {Header} from "@/common/components";
+import {Footer, Header} from "@/common/components";
 import {Routing} from "@/common/routing";
 import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {changeThemeModeAC, selectThemeMode} from "@/app/model/app-slice.ts";
@@ -34,11 +34,12 @@ function App() {
   }, [themeMode]);
 
   return (
-    <div>
+    <div className={s.app}>
       <Header />
       <div className={s.layout}>
         <Routing/>
       </div>
+      <Footer/>
     </div>
   )
 }

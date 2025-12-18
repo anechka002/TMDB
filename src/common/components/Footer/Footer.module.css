@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+  font-size: 16px;
+  background-color: var(--header-divider);
+  border-top: 1px solid  var(--header-pill-bg);
+  color: var(--text-color);
+}

@@ -1,10 +1,10 @@
 import s from './CategoryList.module.css'
-import {MovieCard} from "@/entities/movie/ui/MovieCard.tsx";
 import type {
   MovieItem
 } from "@/features/category-movies/api/moviesApi.types.ts";
 import clsx from "clsx";
 import type {CategoryLayout} from "../model/layout";
+import {FavoriteMovieCard} from "@/features/favorites/ui/FavoriteMovieCard.tsx";
 
 type Props = {
   movies: MovieItem[]
@@ -23,7 +23,7 @@ export const CategoryList = ({movies, layout = 'main'}: Props) => {
     <section className={s.movieList}>
       <div className={className}>
         {movies.map(movie => (
-          <MovieCard key={movie.id} movie={movie}/>
+          <FavoriteMovieCard key={movie.id} movie={movie}/>
         ))}
       </div>
     </section>

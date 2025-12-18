@@ -4,24 +4,15 @@ import type {
 } from "@/features/category-movies/api/moviesApi.types.ts";
 import s from './MovieCard.module.css'
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons"
-import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
-import {
-  selectIsFavorite,
-  toggleFavorite
-} from "@/features/favorites/model/favorites-slice.ts";
 import clsx from 'clsx';
 
 type Props = {
   movie: MovieItem
+  onToggleFavorite: () => void
+  isFavorite: boolean
 }
 
-export const MovieCard = ({movie}: Props) => {
-  const dispatch = useAppDispatch()
-
-  const isFavorite = useAppSelector(state =>
-    selectIsFavorite(state, movie.id)
-  );
+export const MovieCard = ({movie, onToggleFavorite, isFavorite}: Props) => {
 
   const rating = movie.vote_average
 
@@ -37,9 +28,6 @@ export const MovieCard = ({movie}: Props) => {
     rating < 5 && s.ratingBad,
   )
 
-  const handleOnToggleFavorite = () => {
-    dispatch(toggleFavorite(movie))
-  }
   return (
     <div className={s.movieCard} key={movie.id}>
       <div className={s.posterWrapper}>
@@ -52,7 +40,7 @@ export const MovieCard = ({movie}: Props) => {
       </div>
 
       <div className={className}>
-        <button onClick={handleOnToggleFavorite} className={s.iconButton}>
+        <button onClick={onToggleFavorite} className={s.iconButton}>
           {isFavorite ? (
               <HeartFilledIcon className={s.icon}/>
             ) : (

@@ -12,9 +12,17 @@
 .gridCategory {--cols: 5;}
 
 /* адаптив */
+@media (max-width: 1180px) {
+  .gridMain { --cols: 5; }
+}
+
 @media (max-width: 1024px) {
   .gridMain { --cols: 4; }
   .gridCategory { --cols: 3; }
+}
+
+@media (max-width: 790px) {
+  .gridMain { --cols: 3; }
 }
 
 @media (max-width: 640px) {

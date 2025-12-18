@@ -30,7 +30,7 @@ export const CategoryPreview = ({category, limit = 6, title}: Props) => {
         <SectionTitle title={title}/>
         <Button variant={'primary'} onClick={handleNavigate}>View more</Button>
       </div>
-      <CategoryList movies={movies} />
+      <CategoryList movies={movies} layout={'main'}/>
     </section>
   );
 };

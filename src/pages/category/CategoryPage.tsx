@@ -20,7 +20,8 @@ export const CategoryPage = () => {
     <>
       <CategoryTabs/>
       <SectionTitle title={current.title}/>
-      <CategoryList movies={data?.results ?? []}/>
+      <CategoryList movies={data?.results ?? []} layout={'category'}/>
     </>
   );
 };
+

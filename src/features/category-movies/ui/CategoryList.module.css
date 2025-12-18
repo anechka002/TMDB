@@ -4,6 +4,23 @@
 
 .movieCards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(var(--cols), minmax(180px, 1fr));
+  gap: 16px;
+}
+/* варианты */
+.gridMain {--cols: 6;}
+.gridCategory {--cols: 5;}
+
+/* адаптив */
+@media (max-width: 1024px) {
+  .gridMain { --cols: 4; }
+  .gridCategory { --cols: 3; }
+}
+
+@media (max-width: 640px) {
+  .gridMain, .gridCategory { --cols: 2; }
+}
+
+@media (max-width: 420px) {
+  .gridMain, .gridCategory { --cols: 1; }
 }

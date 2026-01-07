@@ -1,0 +1,1 @@
+export const POPULAR_BACKDROP_SEED = Math.random()

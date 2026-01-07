@@ -1,13 +1,11 @@
 .header {
   background-color: var(--header-divider);
-  padding: 20px 0;
-  position: fixed;
+  padding: 10px 0;
+  position: sticky;
   top: 0;
-  left: 0;
-  right: 0;
   z-index: 1000;
 
-  height: 80px;
+  height: 70px;
 }
 
 .container {

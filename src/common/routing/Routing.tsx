@@ -3,8 +3,8 @@ import {MainPage} from "@/pages/main/MainPage.tsx";
 import {CategoryPage} from "@/pages/category/CategoryPage.tsx";
 import {PageNotFound} from "@/common/components";
 import {Path} from "@/common/routing/paths.ts";
-import {Search} from "@/features/search/ui/Search/Search.tsx";
 import {FavoritesPage} from "@/pages/favorites/FavoritesPage.tsx";
+import {SearchPage} from "@/pages/search/SearchPage.tsx";
 
 export const Routing = () => (
   <Routes>
@@ -15,7 +15,7 @@ export const Routing = () => (
       <Route index element={<Navigate to={`${Path.Movies}/popular`} replace />} />
       <Route path=":categoryType" element={<CategoryPage />} />
     </Route>
-    <Route path={Path.Search} element={<Search />} />
+    <Route path={Path.Search} element={<SearchPage />} />
     <Route path={Path.Favorites} element={<FavoritesPage />} />
     <Route path={Path.NotFound} element={<PageNotFound />} />
   </Routes>

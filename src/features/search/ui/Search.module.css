@@ -1,0 +1,101 @@
+.wrapper {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.inputWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* input */
+.input {
+  width: 100%;
+  padding: 12px 40px 12px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--header-pill-bg);
+  background-color: var(--header-divider);
+  color: var(--text-color);
+  font-size: 14px;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.input:focus {
+  outline: none;
+  border-color: rgb(0, 139, 139, 0.8);
+}
+
+
+/* ❌ кнопка скрыта по умолчанию */
+.clear {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.8);
+
+  opacity: 0;
+  pointer-events: none;
+
+  background: none;
+  border: none;
+  padding: 0;
+
+  color: var(--text-color);
+  cursor: pointer;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* ✅ ПОЯВЛЯЕТСЯ, если input в фокусе */
+.inputWrapper:focus-within .clear {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
+
+/* ✅ ПОЯВЛЯЕТСЯ при наведении в зону справа */
+.inputWrapper:hover .clear {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(-50%) scale(1);
+}
+
+/* стили svg */
+.clear svg {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
+}
+
+.clear:hover svg {
+  opacity: 0.7;
+}
+
+/* search button */
+.button {
+  padding: 12px 20px;
+  border-radius: 999px;
+  background: rgb(0, 139, 139, 0.8);
+  border: none;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.button:hover {
+  opacity: 0.7;
+  transform: scale(1.1);
+}
+
+.title {
+  margin-top: 20px;
+  color: var(--text-color);
+}

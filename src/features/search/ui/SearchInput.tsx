@@ -18,6 +18,7 @@ export const SearchInput = ({ onSearch, onReset, initialValue = "" }: Props) => 
   });
 
   const value = watch("query");
+  const isDisabled = !value.trim()
 
   const submit = handleSubmit(({ query }) => {
     onSearch(query.trim());
@@ -50,7 +51,7 @@ export const SearchInput = ({ onSearch, onReset, initialValue = "" }: Props) => 
         )}
       </div>
 
-      <button className={s.button} type="submit">
+      <button className={s.button} type="submit" disabled={isDisabled}>
         Search
       </button>
     </form>

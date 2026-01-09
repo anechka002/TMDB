@@ -95,6 +95,11 @@
   transform: scale(1.1);
 }
 
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .title {
   margin-top: 20px;
   color: var(--text-color);

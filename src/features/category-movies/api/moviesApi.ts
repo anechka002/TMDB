@@ -13,7 +13,7 @@ export const moviesApi = createApi({
       return headers
     },
   }),
-  tagTypes: ['Movies'],
+  tagTypes: ['Movies', 'Search'],
   endpoints: build => ({
     fetchMoviesByCategory: build.query<MovieResponse, { category: CategoryType; page?: number }>({
       query: ({category, page = 1}) => ({
@@ -26,8 +26,22 @@ export const moviesApi = createApi({
       providesTags: (_result, _error, arg) => [
         { type: 'Movies', id: arg.category },
       ],
-    })
+    }),
+    searchMovies: build.query<MovieResponse, {query: string; page?: number }>({
+      query: ({query, page = 1}) => ({
+        url: `/search/movie`,
+        params: {
+          query,
+          page,
+          api_key: import.meta.env.VITE_API_KEY
+        }
+      }),
+      providesTags: (_result, _error, arg) => [
+        { type: 'Search', id: arg.query },
+      ],
+    }),
+
   }),
 })
 
-export const { useFetchMoviesByCategoryQuery } = moviesApi
+export const { useFetchMoviesByCategoryQuery, useSearchMoviesQuery } = moviesApi

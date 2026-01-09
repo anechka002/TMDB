@@ -5,8 +5,8 @@ import {
 import {SearchResults} from "@/features/search/ui/SearchResults.tsx";
 import {SearchEmptyState} from "@/features/search/ui/SearchEmptyState.tsx";
 import {
-  SearchInputHookForm
-} from "@/features/search/ui/SearchInputHookForm.tsx";
+  SearchInput
+} from "@/features/search/ui/SearchInput.tsx";
 import {useSearchParams} from "react-router";
 
 export const SearchPage = () => {
@@ -38,14 +38,17 @@ export const SearchPage = () => {
   return (
     <>
       <SectionTitle title={'Search Results'}/>
-      <SearchInputHookForm onSearch={handleSearch} onReset={handleReset} initialValue={search} />
+      <SearchInput onSearch={handleSearch} onReset={handleReset} initialValue={search} />
 
       {!search && (
         <SearchEmptyState text={'Enter a movie title to start searching'}/>
       )}
 
       {search && !isFetching && data?.results.length === 0 && (
-        <SearchEmptyState text={`No matches found for "${search}"`}/>
+        <>
+          <SectionTitle title={`Results for "${search}"`} />
+          <SearchEmptyState text={`No matches found for "${search}"`}/>
+        </>
       )}
 
       {results.length > 0 && (

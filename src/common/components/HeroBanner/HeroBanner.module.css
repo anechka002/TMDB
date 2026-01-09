@@ -12,3 +12,53 @@
   position: relative;
   overflow: hidden;
 }
+
+/* затемнение */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0.6) 35%,
+    rgba(0, 0, 0, 0.3) 65%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+/* контейнер */
+.container {
+  position: relative;
+  z-index: 1;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  height: 100%;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center; /* вертикальное центрирование */
+}
+
+/* контент */
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: stretch; /* важно */
+  width: 100%;          /* важно, чтобы было от чего тянуться */
+}
+
+.title {
+  font-size: 50px;
+  color: white;
+  font-weight: 700;
+}
+
+.subtitle {
+  font-size: 24px;
+  color: white;
+  font-weight: 500;
+  margin-bottom: 10px;
+}

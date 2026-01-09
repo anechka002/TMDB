@@ -6,7 +6,10 @@
 
 .inputWrapper {
   position: relative;
-  width: 100%;
+
+  flex: 1 1 auto; /* можно: flex: 1; */
+  min-width: 0;   /* чтобы внутри flex корректно считалась ширина */
+
   max-width: 500px;
 }
 
@@ -88,6 +91,8 @@
   cursor: pointer;
 
   transition: opacity 0.15s ease, transform 0.15s ease;
+
+  flex: 0 0 auto;
 }
 
 .button:hover {

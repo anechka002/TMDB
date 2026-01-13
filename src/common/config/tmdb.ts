@@ -1,2 +1,3 @@
 export const IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w300';
 export const IMAGE_BANNER_URL = 'https://image.tmdb.org/t/p/original';
+export const NO_POSTER_URL = "https://placehold.co/300x450?text=No+Poster";

@@ -7,11 +7,18 @@ import {
 } from "@/features/category-movies/api/moviesApi.ts";
 import type {CategoryType} from "@/features/category-movies/api/moviesApi.types.ts";
 import {categories} from "@/features/category-movies/model/categories.ts";
+import {usePagination} from "@/features/pagination/model/usePagination.ts";
+import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
 
 export const CategoryPage = () => {
   const { categoryType = 'popular' } = useParams<{ categoryType: string }>();
 
-  const {data} = useFetchMoviesByCategoryQuery({category: categoryType as CategoryType});
+  const {currentPage, setPage} = usePagination()
+
+  const {data} = useFetchMoviesByCategoryQuery({
+    category: categoryType as CategoryType,
+    page: currentPage
+  });
 
   const current =
     categories.find(c => c.type === categoryType) ?? categories[0]
@@ -21,6 +28,7 @@ export const CategoryPage = () => {
       <CategoryTabs/>
       <SectionTitle title={current.title}/>
       <CategoryList movies={data?.results ?? []} layout={'category'}/>
+      <Pagination currentPage={currentPage} setCurrentPage={setPage} pagesCount={data?.total_pages ?? 1}/>
     </>
   );
 };

@@ -18,7 +18,7 @@ export type MovieItem = {
   release_date: string;       // формат YYYY-MM-DD
   title: string;
   video: boolean;
-  vote_average: number;
+  vote_average: number | null;
   vote_count: number;
 }
 

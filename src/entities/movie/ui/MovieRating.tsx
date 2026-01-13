@@ -1,7 +1,10 @@
 import clsx from "clsx";
 import s from "@/entities/movie/ui/MovieCard.module.css";
 
-export const MovieRating = ({rating}: {rating: number}) => {
+export const MovieRating = ({rating}: {rating?: number | null}) => {
+  if (!rating) {
+    return null;
+  }
 
   const ratingClassName = clsx(
     s.ratingBadge,

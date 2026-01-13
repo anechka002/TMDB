@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.pageButton {
+  padding: 10px 15px;
+  border: 1px solid var(--header-pill-bg);
+  background-color: var(--header-divider);
+  color: var(--text-color);
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.pageButtonActive {
+  background: rgb(0, 139, 139, 0.8);
+  cursor: default;
+}
+
+.ellipsis {
+  padding: 4px 10px;
+  color: #888;
+  user-select: none;
+}

@@ -4,8 +4,8 @@ import type {
 import s from './MovieCard.module.css'
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons"
 import clsx from 'clsx';
-import {MoviePoster} from "@/entities/movie/ui/MoviePoster.tsx";
 import {MovieRating} from "@/entities/movie/ui/MovieRating.tsx";
+import {MoviePosterLink} from "@/entities/movie/ui/MoviePosterLink.tsx";
 
 type Props = {
   movie: MovieItem
@@ -23,7 +23,7 @@ export const MovieCard = ({movie, onToggleFavorite, isFavorite}: Props) => {
   return (
     <div className={s.movieCard} key={movie.id}>
       <div className={s.posterWrapper}>
-        <MoviePoster movie={movie} />
+        <MoviePosterLink movieId={movie.id} posterPath={movie.poster_path} title={movie.title} />
         <MovieRating rating={movie.vote_average} />
       </div>
 

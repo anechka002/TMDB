@@ -1,0 +1,13 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding-block: 24px;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}

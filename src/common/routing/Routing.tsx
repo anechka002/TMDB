@@ -5,12 +5,12 @@ import {PageNotFound} from "@/common/components";
 import {Path} from "@/common/routing/paths.ts";
 import {FavoritesPage} from "@/pages/favorites/FavoritesPage.tsx";
 import {SearchPage} from "@/pages/search/SearchPage.tsx";
+import {MovieDetailsPage} from "@/pages/movieDetails/MovieDetailsPage.tsx";
 
 export const Routing = () => (
   <Routes>
     <Route path={Path.Main} element={<MainPage />} />
-    {/*<Route path={Path.Movies} element={<CategoryPage />} />*/}
-    {/*<Route path={Path.Category} element={<CategoryPage />} />*/}
+    <Route path={Path.Movie} element={<MovieDetailsPage />} />
     <Route path={Path.Movies}>
       <Route index element={<Navigate to={`${Path.Movies}/popular`} replace />} />
       <Route path=":categoryType" element={<CategoryPage />} />

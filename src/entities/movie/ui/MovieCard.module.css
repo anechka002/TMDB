@@ -7,9 +7,9 @@
 }
 
 .posterWrapper {
-  border-radius: 16px;
   overflow: hidden;
   position: relative;
+  border-radius: 16px;
 }
 
 .ratingBadge {
@@ -40,6 +40,12 @@
   background-color: #e74c3c;
 }
 
+.ratingDetails {
+  position: static;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
 .moviePoster {
   width: 100%;
   height: 100%;
@@ -48,8 +54,17 @@
   transition: transform 0.15s ease;
 }
 
-.moviePoster:hover {
+/* hover только для карточек */
+.posterCard:hover {
   transform: scale(1.08);
+}
+
+/* details — без hover */
+.posterDetails {
+  width: auto;
+  max-width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .movieTitle {

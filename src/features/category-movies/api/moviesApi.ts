@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type {
-  CategoryType,
+  CategoryType, MovieDetailsResponse,
   MovieResponse
 } from "@/features/category-movies/api/moviesApi.types.ts";
 
@@ -13,7 +13,7 @@ export const moviesApi = createApi({
       return headers
     },
   }),
-  tagTypes: ['Movies', 'Search'],
+  tagTypes: ['Movies', 'Search', 'Movie'],
   endpoints: build => ({
     fetchMoviesByCategory: build.query<MovieResponse, { category: CategoryType; page?: number }>({
       query: ({category, page = 1}) => ({
@@ -40,8 +40,19 @@ export const moviesApi = createApi({
         { type: 'Search', id: arg.query },
       ],
     }),
+    getMovieDetailsQuery: build.query<MovieDetailsResponse, {movie_id: string}>({
+      query: ({movie_id}) => ({
+        url: `/movie/${movie_id}`,
+        params: {
+          api_key: import.meta.env.VITE_API_KEY
+        }
+      }),
+      providesTags: (_result, _error, arg) => [
+        { type: 'Movie', id: arg.movie_id },
+      ],
+    }),
 
   }),
 })
 
-export const { useFetchMoviesByCategoryQuery, useSearchMoviesQuery } = moviesApi
+export const { useFetchMoviesByCategoryQuery, useSearchMoviesQuery, useGetMovieDetailsQueryQuery } = moviesApi

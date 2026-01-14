@@ -1,19 +1,30 @@
 import {IMAGE_BASE_URL, NO_POSTER_URL} from "@/common/config";
 import s from "@/entities/movie/ui/MovieCard.module.css";
-import type {
-  MovieItem
-} from "@/features/category-movies/api/moviesApi.types.ts";
+import clsx from "clsx";
+import type {PosterVariant} from "@/entities/movie/model/types.ts";
 
-export const MoviePoster = ({movie}: {movie: MovieItem}) => {
-  const posterUrl = movie.poster_path
-    ? `${IMAGE_BASE_URL}/${movie.poster_path}`
+type Props = {
+  posterPath?: string | null | undefined;
+  title?: string;
+  hoverable?: boolean;
+  variant?: PosterVariant
+}
+
+export const MoviePoster = ({posterPath, title, variant = 'card'}: Props) => {
+
+  const posterUrl = posterPath
+    ? `${IMAGE_BASE_URL}/${posterPath}`
     : NO_POSTER_URL
 
   return (
     <img
       src={posterUrl}
-      alt={movie.original_title ?? "Movie poster"}
-      className={s.moviePoster}
+      alt={title ?? "Movie poster"}
+      className={clsx(
+        s.moviePoster,
+        variant === "card" && s.posterCard,
+        variant === "details" && s.posterDetails,
+      )}
     />
   );
 };

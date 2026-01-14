@@ -1,13 +1,19 @@
 import clsx from "clsx";
 import s from "@/entities/movie/ui/MovieCard.module.css";
 
-export const MovieRating = ({rating}: {rating?: number | null}) => {
+type Props = {
+  rating?: number | null;
+  variant?: 'card' | 'details'
+}
+
+export const MovieRating = ({rating, variant}: Props) => {
   if (!rating) {
     return null;
   }
 
   const ratingClassName = clsx(
     s.ratingBadge,
+    variant === 'details' && s.ratingDetails,
     rating > 7 && s.ratingGood,
     rating >= 5 && rating <= 7 && s.ratingMedium,
     rating < 5 && s.ratingBad,

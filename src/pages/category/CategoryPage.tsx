@@ -1,5 +1,5 @@
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
-import {SectionTitle} from "@/common/components";
+import {SectionTitle} from "@/shared/ui";
 import {CategoryTabs} from "@/features/category-movies/ui/CategoryTabs.tsx";
 import {useParams} from "react-router";
 import {

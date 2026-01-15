@@ -1,6 +1,6 @@
 import {NavLink} from "react-router";
 import {categories} from "@/features/category-movies/model/categories.ts";
-import {Path} from "@/common/routing";
+import {Path} from "@/app/routing";
 import clsx from "clsx";
 import s from './CategoryTabs.module.css'
 

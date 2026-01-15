@@ -1,13 +1,13 @@
 import {useParams} from "react-router";
 import {
   MovieInfo
-} from "@/features/category-movies/movie-details/ui/movieInfo/MovieInfo.tsx";
+} from "@/widgest/movie-details/ui/movieInfo/MovieInfo.tsx";
 import {
   MovieCast
-} from "@/features/category-movies/movie-details/ui/MovieCast.tsx";
+} from "@/widgest/movie-details/ui/MovieCast.tsx";
 import {
   SimilarMovies
-} from "@/features/category-movies/movie-details/ui/SimilarMovies.tsx";
+} from "@/widgest/movie-details/ui/SimilarMovies.tsx";
 import s from './MovieDetailsPage.module.css'
 
 export const MovieDetailsPage = () => {

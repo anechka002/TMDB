@@ -1,4 +1,4 @@
-import {SectionTitle} from "@/common/components";
+import {SectionTitle} from "@/shared/ui";
 import {
   useSearchMoviesQuery
 } from "@/features/category-movies/api/moviesApi.ts";

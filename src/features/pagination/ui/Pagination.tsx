@@ -1,5 +1,5 @@
 import s from './Pagination.module.css'
-import {getPaginationPages} from "@/common/utils";
+import {getPaginationPages} from "@/shared/lib";
 
 type Props = {
   currentPage: number

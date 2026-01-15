@@ -1,6 +1,6 @@
 import {changeThemeModeAC, selectThemeMode} from "@/app/model/app-slice.ts";
 import s from './ThemeToggle.module.css'
-import {useAppDispatch, useAppSelector} from "@/common/hooks";
+import {useAppDispatch, useAppSelector} from "@/shared/hooks";
 
 export const ThemeToggle = () => {
   const themeMode = useAppSelector(selectThemeMode)

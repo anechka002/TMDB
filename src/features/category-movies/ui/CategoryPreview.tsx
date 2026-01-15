@@ -6,8 +6,8 @@ import {
   useFetchMoviesByCategoryQuery
 } from "@/features/category-movies/api/moviesApi.ts";
 import s from "./CategoryPreview.module.css";
-import {Button, SectionTitle} from "@/common/components";
-import {Path} from "@/common/routing";
+import {Button, SectionTitle} from "@/shared/ui";
+import {Path} from "@/app/routing";
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
 
 type Props = {

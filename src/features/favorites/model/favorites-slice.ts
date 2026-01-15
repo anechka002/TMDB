@@ -1,6 +1,6 @@
 import type {MovieItem} from "@/features/category-movies/api/moviesApi.types.ts";
 import {createSlice} from "@reduxjs/toolkit";
-import {loadFavoritesFromStorage} from "@/common/utils";
+import {loadFavoritesFromStorage} from "@/shared/lib";
 
 type FavoritesState = {
   favoritesMovies: MovieItem[];

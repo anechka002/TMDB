@@ -1,11 +1,11 @@
 import s from './App.module.css'
-import {Footer, Header} from "@/common/components";
-import {Routing} from "@/common/routing";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
+import {Footer, Header} from "@/shared/ui";
+import {Routing} from "@/app/routing";
+import {useAppSelector} from "@/shared/hooks/useAppSelector.ts";
 import {changeThemeModeAC, selectThemeMode} from "@/app/model/app-slice.ts";
-import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
+import {useAppDispatch} from "@/shared/hooks/useAppDispatch.ts";
 import {useEffect} from "react";
-import type {ThemeMode} from "@/common/types";
+import type {ThemeMode} from "@/shared/types";
 import {
   selectFavoritesMovies
 } from "@/features/favorites/model/favorites-slice.ts";

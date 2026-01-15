@@ -3,7 +3,7 @@ import {
   CategoryPreview
 } from "@/features/category-movies/ui/CategoryPreview.tsx";
 import {categories} from "@/features/category-movies/model/categories.ts";
-import {HeroBanner} from "@/common/components";
+import {HeroBanner} from "@/shared/ui";
 
 export const MainPage = () => {
   return (

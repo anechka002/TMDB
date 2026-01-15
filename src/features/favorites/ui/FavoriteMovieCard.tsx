@@ -2,7 +2,7 @@ import {
   selectIsFavorite,
   toggleFavorite
 } from "@/features/favorites/model/favorites-slice.ts";
-import {useAppDispatch, useAppSelector} from "@/common/hooks";
+import {useAppDispatch, useAppSelector} from "@/shared/hooks";
 import type {
   MovieItem
 } from "@/features/category-movies/api/moviesApi.types.ts";

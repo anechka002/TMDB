@@ -2,7 +2,6 @@ import type {
   MovieItem
 } from "@/features/category-movies/api/moviesApi.types.ts";
 
-
 export const loadFavoritesFromStorage = () => {
   try {
     const favoritesMovies = localStorage.getItem('favorites');

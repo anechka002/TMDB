@@ -1,4 +1,4 @@
-import tmdbLogo from '../../../assets/tmdbLogo.svg';
+import tmdbLogo from '@/shared/assets/tmdbLogo.svg';
 import s from './TmdbLogo.module.css'
 
 type TmdbLogoProps =  {

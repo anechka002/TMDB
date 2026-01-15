@@ -1,6 +1,6 @@
-import {useRandomPopularBackdrop} from "@/common/hooks";
+import {useRandomPopularBackdrop} from "@/shared/hooks";
 import s from './HeroBanner.module.css'
-import {IMAGE_BANNER_URL} from "@/common/config";
+import {IMAGE_BANNER_URL} from "@/shared/config";
 import {SearchInput} from "@/features/search/ui/SearchInput.tsx";
 import {createSearchParams, useNavigate} from "react-router";
 

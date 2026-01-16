@@ -2,7 +2,7 @@ import {
   useGetSimilarMoviesQuery
 } from "@/features/category-movies/api/moviesApi.ts";
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
-import s from "@/widgest/movie-details/movie-cast/ui/MovieCast.module.css";
+import s from "@/widgets/movie-details/movie-cast/ui/MovieCast.module.css";
 
 export const SimilarMovies = ({movieId}: {movieId: string}) => {
 

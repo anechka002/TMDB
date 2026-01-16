@@ -4,7 +4,7 @@ import {
 } from "@/features/category-movies/api/moviesApi.ts";
 import {MoviePoster} from "@/entities/movie/ui/MoviePoster.tsx";
 import {useNavigate} from "react-router";
-import {MovieGenres, MovieHeader} from "@/widgest/movie-details/movie-info";
+import {MovieGenres, MovieHeader} from "@/widgets/movie-details/movie-info";
 
 export const MovieInfo = ({movieId}: {movieId: string}) => {
 

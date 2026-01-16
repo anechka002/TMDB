@@ -1,8 +1,8 @@
 import {useParams} from "react-router";
 import s from './MovieDetailsPage.module.css'
-import {MovieInfo} from "@/widgest/movie-details/movie-info";
-import {MovieCast} from "@/widgest/movie-details/movie-cast";
-import {SimilarMovies} from "@/widgest/movie-details/similar-movies";
+import {MovieInfo} from "@/widgets/movie-details/movie-info";
+import {MovieCast} from "@/widgets/movie-details/movie-cast";
+import {SimilarMovies} from "@/widgets/movie-details/similar-movies";
 
 export const MovieDetailsPage = () => {
   const { movieId } = useParams<{ movieId: string }>();

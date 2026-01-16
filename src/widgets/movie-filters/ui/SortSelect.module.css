@@ -1,0 +1,27 @@
+.sortControls {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.sortLabel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-weight: 600;
+  width: 100%;
+  color: var(--text-color);
+}
+
+.sortSelect {
+  flex: 1;
+  min-width: 200px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--theme-btn-border);
+  font-size: 14px;
+  background-color: var(--color-control-background);
+  color: var(--text-color);
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}

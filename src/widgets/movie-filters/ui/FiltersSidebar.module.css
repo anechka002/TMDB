@@ -1,0 +1,19 @@
+.filtersColumn {
+  grid-column: 1;
+}
+
+.filters {
+  background-color: var(--header-divider);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.filtersTitle {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+

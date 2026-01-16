@@ -5,7 +5,8 @@ import {PageNotFound} from "@/shared/ui";
 import {Path} from "@/app/routing/paths.ts";
 import {FavoritesPage} from "@/pages/favorites/FavoritesPage.tsx";
 import {SearchPage} from "@/pages/search/SearchPage.tsx";
-import {MovieDetailsPage} from "@/pages/movieDetails/MovieDetailsPage.tsx";
+import {MovieDetailsPage} from "@/pages/movie-details/MovieDetailsPage.tsx";
+import {FilteredMoviesPage} from "@/pages/filtered-movies";
 
 export const Routing = () => (
   <Routes>
@@ -15,6 +16,7 @@ export const Routing = () => (
       <Route index element={<Navigate to={`${Path.Movies}/popular`} replace />} />
       <Route path=":categoryType" element={<CategoryPage />} />
     </Route>
+    <Route path={Path.Filtered} element={<FilteredMoviesPage />} />
     <Route path={Path.Search} element={<SearchPage />} />
     <Route path={Path.Favorites} element={<FavoritesPage />} />
     <Route path={Path.NotFound} element={<PageNotFound />} />

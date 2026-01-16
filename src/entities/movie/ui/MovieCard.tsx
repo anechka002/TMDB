@@ -36,7 +36,7 @@ export const MovieCard = ({movie, onToggleFavorite, isFavorite}: Props) => {
         </div>
       )}
 
-      <div className={s.movieTitle}>{movie.original_title}</div>
+      <div className={s.movieTitle}>{movie.title}</div>
     </div>
   );
 };

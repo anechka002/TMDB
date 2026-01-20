@@ -5,7 +5,7 @@ import {
   favoritesReducer,
   favoritesSlice
 } from "@/features/favorites/model/favorites-slice.ts";
-import {moviesApi} from "@/features/category-movies/api/moviesApi.ts";
+import {categoryMoviesApi} from "@/features/category-movies/api/categoryMovies.api.ts";
 import {
   filtersReducer,
   filtersSlice
@@ -13,16 +13,20 @@ import {
 import {
   discoverMoviesApi
 } from "@/features/discover-movies/api/discoverMovies.api.ts";
+import {movieApi} from "@/entities/movie/api/movie.api.ts";
+import {searchApi} from "@/features/search/api/search.api.ts";
 
 export const store = configureStore({
   reducer: {
     [appSlice.name]: appReducer,
     [favoritesSlice.name]: favoritesReducer,
     [filtersSlice.name]: filtersReducer,
-    [moviesApi.reducerPath]: moviesApi.reducer,
+    [movieApi.reducerPath]: movieApi.reducer,
+    [categoryMoviesApi.reducerPath]: categoryMoviesApi.reducer,
+    [searchApi.reducerPath]: searchApi.reducer,
     [discoverMoviesApi.reducerPath]: discoverMoviesApi.reducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(moviesApi.middleware, discoverMoviesApi.middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(movieApi.middleware, categoryMoviesApi.middleware, discoverMoviesApi.middleware, searchApi.middleware),
 })
 
 setupListeners(store.dispatch)

@@ -1,10 +1,8 @@
 import s from './MovieInfo.module.css'
-import {
-  useGetMovieDetailsQuery
-} from "@/features/category-movies/api/moviesApi.ts";
 import {MoviePoster} from "@/entities/movie/ui/MoviePoster.tsx";
 import {useLocation, useNavigate} from "react-router";
 import {MovieGenres, MovieHeader} from "@/widgets/movie-details/movie-info";
+import {useGetMovieDetailsQuery} from "@/entities/movie/api/movie.api.ts";
 
 type LocationState = {from?: string}
 

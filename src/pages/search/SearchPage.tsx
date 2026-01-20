@@ -1,7 +1,4 @@
 import {SectionTitle} from "@/shared/ui";
-import {
-  useSearchMoviesQuery
-} from "@/features/category-movies/api/moviesApi.ts";
 import {SearchResults} from "@/features/search/ui/SearchResults.tsx";
 import {SearchEmptyState} from "@/features/search/ui/SearchEmptyState.tsx";
 import {
@@ -10,6 +7,7 @@ import {
 import {useSearchParams} from "react-router";
 import {usePagination} from "@/features/pagination/model/usePagination.ts";
 import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
+import {useSearchMoviesQuery} from "@/features/search/api/search.api.ts";
 
 export const SearchPage = () => {
 

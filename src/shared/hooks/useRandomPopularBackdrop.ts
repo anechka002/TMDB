@@ -1,8 +1,8 @@
-import {
-  useFetchMoviesByCategoryQuery
-} from "@/features/category-movies/api/moviesApi.ts";
 import {useMemo} from "react";
 import {POPULAR_BACKDROP_SEED} from "@/shared/lib/randomSeed.ts";
+import {
+  useFetchMoviesByCategoryQuery
+} from "@/features/category-movies/api/categoryMovies.api.ts";
 
 export const useRandomPopularBackdrop = () => {
   const {data, isLoading} = useFetchMoviesByCategoryQuery({category: 'popular'});

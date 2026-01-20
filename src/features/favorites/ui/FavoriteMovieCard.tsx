@@ -3,10 +3,8 @@ import {
   toggleFavorite
 } from "@/features/favorites/model/favorites-slice.ts";
 import {useAppDispatch, useAppSelector} from "@/shared/hooks";
-import type {
-  MovieItem
-} from "@/features/category-movies/api/moviesApi.types.ts";
 import {MovieCard} from "@/entities/movie/ui/MovieCard.tsx";
+import type {MovieItem} from "@/entities/movie/api/movie.api.types.ts";
 
 export const FavoriteMovieCard = ({movie}: {movie: MovieItem}) => {
   const dispatch = useAppDispatch()

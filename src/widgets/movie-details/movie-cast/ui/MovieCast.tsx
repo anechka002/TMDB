@@ -1,8 +1,6 @@
 import s from './MovieCast.module.css'
-import {
-  useGetMovieCreditsQuery
-} from "@/features/category-movies/api/moviesApi.ts";
 import {IMAGE_BASE_URL} from "@/shared/config";
+import {useGetMovieCreditsQuery} from "@/entities/movie/api/movie.api.ts";
 
 export const MovieCast = ({movieId}: {movieId: string}) => {
 

@@ -1,9 +1,8 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type {SortByType} from "@/widgets/movie-filters/model/types.ts";
 import type {MovieResponse} from "@/entities/movie/api/movie.api.types.ts";
 
-export const discoverMoviesApi = createApi({
-  reducerPath: 'discoverMoviesApi',
+export const searchApi  = createApi({
+  reducerPath: 'searchApi',
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_BASE_URL,
     prepareHeaders: (headers) => {
@@ -11,23 +10,22 @@ export const discoverMoviesApi = createApi({
       return headers
     },
   }),
-  tagTypes: ['SortByMovies'],
+  tagTypes: ['Search'],
   endpoints: build => ({
-    discoverMovies: build.query<MovieResponse, { sort_by: SortByType; page?: number }>({
-      query: ({sort_by, page = 1}) => ({
-        url: `/discover/movie`,
+    searchMovies: build.query<MovieResponse, {query: string; page?: number }>({
+      query: ({query, page = 1}) => ({
+        url: `/search/movie`,
         params: {
-          sort_by,
+          query,
           page,
           api_key: import.meta.env.VITE_API_KEY
         }
       }),
       providesTags: (_result, _error, arg) => [
-        { type: 'SortByMovies', id: arg.sort_by },
+        { type: 'Search', id: arg.query },
       ],
     }),
-
   }),
 })
 
-export const {useDiscoverMoviesQuery} = discoverMoviesApi
+export const { useSearchMoviesQuery } = searchApi

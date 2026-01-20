@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type {
-  CategoryType, MovieCreditsResponse, MovieDetailsResponse,
-  MovieResponse
-} from "@/features/category-movies/api/moviesApi.types.ts";
+  MovieCreditsResponse,
+  MovieDetailsResponse, MovieResponse
+} from "@/entities/movie/api/movie.api.types.ts";
 
-export const moviesApi = createApi({
-  reducerPath: 'moviesApi',
+export const movieApi = createApi({
+  reducerPath: 'movieApi',
   baseQuery: fetchBaseQuery({
     baseUrl: import.meta.env.VITE_BASE_URL,
     prepareHeaders: (headers) => {
@@ -13,33 +13,8 @@ export const moviesApi = createApi({
       return headers
     },
   }),
-  tagTypes: ['Movies', 'Search', 'Movie', 'Credits', 'Similar'],
+  tagTypes: ['Movie', 'Credits', 'Similar'],
   endpoints: build => ({
-    fetchMoviesByCategory: build.query<MovieResponse, { category: CategoryType; page?: number }>({
-      query: ({category, page = 1}) => ({
-        url: `/movie/${category}`,
-        params: {
-          page,
-          api_key: import.meta.env.VITE_API_KEY
-        }
-      }),
-      providesTags: (_result, _error, arg) => [
-        { type: 'Movies', id: arg.category },
-      ],
-    }),
-    searchMovies: build.query<MovieResponse, {query: string; page?: number }>({
-      query: ({query, page = 1}) => ({
-        url: `/search/movie`,
-        params: {
-          query,
-          page,
-          api_key: import.meta.env.VITE_API_KEY
-        }
-      }),
-      providesTags: (_result, _error, arg) => [
-        { type: 'Search', id: arg.query },
-      ],
-    }),
     getMovieDetails: build.query<MovieDetailsResponse, {movie_id: string}>({
       query: ({movie_id}) => ({
         url: `/movie/${movie_id}`,
@@ -77,4 +52,4 @@ export const moviesApi = createApi({
   }),
 })
 
-export const { useFetchMoviesByCategoryQuery, useSearchMoviesQuery, useGetMovieDetailsQuery, useGetMovieCreditsQuery, useGetSimilarMoviesQuery } = moviesApi
+export const { useGetMovieDetailsQuery, useGetMovieCreditsQuery, useGetSimilarMoviesQuery } = movieApi

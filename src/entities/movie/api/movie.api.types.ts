@@ -22,12 +22,6 @@ export type MovieItem = {
   vote_count: number;
 }
 
-export type CategoryType =
-  | 'popular'
-  | 'top_rated'
-  | 'upcoming'
-  | 'now_playing';
-
 export type MovieDetailsResponse = {
   adult: boolean;
   backdrop_path: string | null;
@@ -112,11 +106,3 @@ export type CrewMember = {
   department: string;
   job: string;
 };
-
-
-// Arguments
-export type FetchPopularArgs = {
-  language?: string
-  page?: number
-  region?: string
-}

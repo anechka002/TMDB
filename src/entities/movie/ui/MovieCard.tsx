@@ -1,11 +1,10 @@
-import type {
-  MovieItem
-} from "@/features/category-movies/api/categoryMovies.api.types.ts";
+
 import s from './MovieCard.module.css'
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons"
 import clsx from 'clsx';
 import {MovieRating} from "@/entities/movie/ui/MovieRating.tsx";
 import {MoviePosterLink} from "@/entities/movie/ui/MoviePosterLink.tsx";
+import type {MovieItem} from "@/entities/movie/api/movie.api.types.ts";
 
 type Props = {
   movie: MovieItem

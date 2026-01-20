@@ -1,6 +1,6 @@
 import type {
   CategoryType
-} from "@/features/category-movies/api/moviesApi.types.ts";
+} from "@/features/category-movies/api/categoryMovies.api.types.ts";
 
 export const categories = [
   {type: 'popular', tabLabel: 'Popular Movies', title: "Popular Movies",},

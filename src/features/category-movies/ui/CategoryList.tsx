@@ -1,7 +1,7 @@
 import s from './CategoryList.module.css'
 import type {
   MovieItem
-} from "@/features/category-movies/api/moviesApi.types.ts";
+} from "@/features/category-movies/api/categoryMovies.api.types.ts";
 import clsx from "clsx";
 import type {CategoryLayout} from "../model/layout";
 import {FavoriteMovieCard} from "@/features/favorites/ui/FavoriteMovieCard.tsx";

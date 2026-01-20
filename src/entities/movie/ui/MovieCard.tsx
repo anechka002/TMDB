@@ -1,6 +1,6 @@
 import type {
   MovieItem
-} from "@/features/category-movies/api/moviesApi.types.ts";
+} from "@/features/category-movies/api/categoryMovies.api.types.ts";
 import s from './MovieCard.module.css'
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons"
 import clsx from 'clsx';

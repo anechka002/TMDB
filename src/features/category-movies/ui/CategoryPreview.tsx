@@ -1,14 +1,14 @@
 import type {
   CategoryType
-} from "@/features/category-movies/api/moviesApi.types.ts";
+} from "@/features/category-movies/api/categoryMovies.api.types.ts";
 import {useNavigate} from "react-router";
-import {
-  useFetchMoviesByCategoryQuery
-} from "@/features/category-movies/api/moviesApi.ts";
 import s from "./CategoryPreview.module.css";
 import {Button, SectionTitle} from "@/shared/ui";
 import {Path} from "@/app/routing";
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
+import {
+  useFetchMoviesByCategoryQuery
+} from "@/features/category-movies/api/categoryMovies.api.ts";
 
 type Props = {
   category: CategoryType

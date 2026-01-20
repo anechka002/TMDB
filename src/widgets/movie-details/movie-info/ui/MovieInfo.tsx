@@ -3,17 +3,24 @@ import {
   useGetMovieDetailsQuery
 } from "@/features/category-movies/api/moviesApi.ts";
 import {MoviePoster} from "@/entities/movie/ui/MoviePoster.tsx";
-import {useNavigate} from "react-router";
+import {useLocation, useNavigate} from "react-router";
 import {MovieGenres, MovieHeader} from "@/widgets/movie-details/movie-info";
+
+type LocationState = {from?: string}
 
 export const MovieInfo = ({movieId}: {movieId: string}) => {
 
   const {data, isLoading} = useGetMovieDetailsQuery({movie_id: movieId});
 
+  const location = useLocation()
   const navigate = useNavigate();
+  const state = location.state as LocationState | null;
+
+  // console.log(location)
 
   const handleClickBack = () => {
-    navigate(-1)
+    navigate(state?.from ?? '/movies/popular', {replace: true});
+    // navigate(-1)
   }
 
   if (isLoading || !data) return null;

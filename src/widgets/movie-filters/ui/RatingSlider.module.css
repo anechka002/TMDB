@@ -1,0 +1,61 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray-700);
+}
+
+.values {
+  font-size: 14px;
+  color: var(--color-gray-600);
+}
+
+.ranges {
+  position: relative;
+  height: 32px;
+}
+
+.rangeTrack {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 6px;
+  width: 100%;
+  border-radius: 999px;
+  background: var(--color-gray-200);
+  pointer-events: none;
+}
+
+.rangeFill {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 6px;
+  border-radius: 999px;
+  background: var(--accent-color);
+  pointer-events: none;
+}
+
+.rangeInput {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  width: 100%;
+  pointer-events: none;
+  -webkit-appearance: none;
+  background: transparent;
+  accent-color: var(--accent-color);
+}
+
+.rangeInput::-webkit-slider-thumb {
+  pointer-events: auto;
+}

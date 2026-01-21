@@ -1,20 +1,39 @@
 import {useAppSelector} from "@/shared/hooks";
-import {selectSortBy} from "@/widgets/movie-filters/model/filters.slice.ts";
+import {
+  selectRatingFrom, selectRatingTo,
+  selectSortBy
+} from "@/widgets/movie-filters/model/filters.slice.ts";
 import {
   useDiscoverMoviesQuery
 } from "@/features/discover-movies/api/discoverMovies.api.ts";
 import {usePagination} from "@/features/pagination/model/usePagination.ts";
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
 import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
+import {useEffect} from "react";
+import {useDebounce} from "@/shared/lib";
 
 export const MoviesGrid = () => {
   const sortBy = useAppSelector(selectSortBy)
   const { currentPage, setPage } = usePagination();
 
-  const { data } = useDiscoverMoviesQuery({
+  const ratingFrom = useAppSelector(selectRatingFrom);
+  const ratingTo = useAppSelector(selectRatingTo);
+
+  const debouncedFrom = useDebounce(ratingFrom, 200);
+  const debouncedTo = useDebounce(ratingTo, 200);
+
+  const { data, isLoading } = useDiscoverMoviesQuery({
     sort_by: sortBy,
     page: currentPage,
+    vote_average_gte: debouncedFrom,
+    vote_average_lte: debouncedTo,
   })
+
+  useEffect(() => {
+    setPage(1)
+  }, [sortBy, debouncedFrom, debouncedTo])
+
+  if(isLoading) return <p>Loading...</p>
 
   return (
     <div>

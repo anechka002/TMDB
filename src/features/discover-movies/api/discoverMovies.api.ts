@@ -13,20 +13,18 @@ export const discoverMoviesApi = createApi({
   }),
   tagTypes: ['SortByMovies'],
   endpoints: build => ({
-    discoverMovies: build.query<MovieResponse, { sort_by: SortByType; page?: number }>({
-      query: ({sort_by, page = 1}) => ({
+    discoverMovies: build.query<MovieResponse, { sort_by: SortByType; page?: number; vote_average_gte?: number; vote_average_lte?: number }>({
+      query: ({sort_by, page = 1, vote_average_gte, vote_average_lte}) => ({
         url: `/discover/movie`,
         params: {
           sort_by,
           page,
+          'vote_average.gte': vote_average_gte,
+          'vote_average.lte': vote_average_lte,
           api_key: import.meta.env.VITE_API_KEY
         }
       }),
-      providesTags: (_result, _error, arg) => [
-        { type: 'SortByMovies', id: arg.sort_by },
-      ],
     }),
-
   }),
 })
 

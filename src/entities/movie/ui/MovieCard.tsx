@@ -1,4 +1,3 @@
-
 import s from './MovieCard.module.css'
 import { HeartIcon, HeartFilledIcon } from "@radix-ui/react-icons"
 import clsx from 'clsx';

@@ -21,9 +21,6 @@ export const searchApi  = createApi({
           api_key: import.meta.env.VITE_API_KEY
         }
       }),
-      providesTags: (_result, _error, arg) => [
-        { type: 'Search', id: arg.query },
-      ],
     }),
   }),
 })

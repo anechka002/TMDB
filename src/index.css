@@ -20,6 +20,7 @@
   --color-gray-600: #656565;
   --color-gray-700: #374151;
   --accent-color: #008B8BFF;
+  --accent-color-200: #0f7a7a;
 
   /* header */
   --header-bg: #f5f5f5;
@@ -42,7 +43,8 @@
   --color-gray-200: #2a3757;
   --color-gray-600: #94a3b8;
   --color-gray-700: #cbd5f5;
-  --accent-color: #008B8BFF;
+  --accent-color: #046868;
+  --accent-color-200: #055151;
 
   --header-divider: #1d2840;
   --header-bg: #050b16;

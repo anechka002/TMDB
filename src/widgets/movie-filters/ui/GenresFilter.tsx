@@ -17,7 +17,6 @@ export const GenresFilter = () => {
     <div className={s.genres}>
       {data?.genres?.map((genre) => (
         <Button
-          type={'button'}
           key={genre.id}
           className={selectedId.includes(genre.id) ? s.active : s.genreButton}
           onClick={() => dispatch(toggleGenre(genre.id))}

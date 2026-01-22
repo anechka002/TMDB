@@ -4,8 +4,8 @@
 
 .movieCards {
   display: grid;
-  grid-template-columns: repeat(var(--cols), minmax(180px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(var(--cols), minmax(0, 1fr));
+  gap: 24px;
 }
 /* варианты */
 .gridMain {--cols: 6;}

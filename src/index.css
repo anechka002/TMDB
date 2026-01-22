@@ -31,6 +31,8 @@
   --theme-btn-border: #d0d0d0;
 
   --color-control-background: #f9f9f9;
+  --color-control-border: #324061;
+  --color-control-text: #111827;
 }
 
 :root[data-theme='dark'] {
@@ -49,6 +51,8 @@
   --theme-btn-bg: #111a2b;
 
   --color-control-background: #1f2b40;
+  --color-control-border: #d1d5db;
+  --color-control-text: #f8fafc;
 }
 
 body {

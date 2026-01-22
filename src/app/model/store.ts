@@ -15,6 +15,7 @@ import {
 } from "@/features/discover-movies/api/discoverMovies.api.ts";
 import {movieApi} from "@/entities/movie/api/movie.api.ts";
 import {searchApi} from "@/features/search/api/search.api.ts";
+import {genresApi} from "@/features/genres/api/genres.api.ts";
 
 export const store = configureStore({
   reducer: {
@@ -25,8 +26,9 @@ export const store = configureStore({
     [categoryMoviesApi.reducerPath]: categoryMoviesApi.reducer,
     [searchApi.reducerPath]: searchApi.reducer,
     [discoverMoviesApi.reducerPath]: discoverMoviesApi.reducer,
+    [genresApi.reducerPath]: genresApi.reducer,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(movieApi.middleware, categoryMoviesApi.middleware, discoverMoviesApi.middleware, searchApi.middleware),
+  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(movieApi.middleware, categoryMoviesApi.middleware, discoverMoviesApi.middleware, searchApi.middleware, genresApi.middleware),
 })
 
 setupListeners(store.dispatch)

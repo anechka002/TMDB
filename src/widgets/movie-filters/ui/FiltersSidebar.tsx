@@ -1,5 +1,5 @@
 import s from "./FiltersSidebar.module.css";
-import {RatingSlider, SortSelect} from "@/widgets/movie-filters";
+import {GenresFilter, RatingSlider, SortSelect} from "@/widgets/movie-filters";
 
 export const FiltersSidebar = () => {
   return (
@@ -8,6 +8,7 @@ export const FiltersSidebar = () => {
         <h2 className={s.filtersTitle}>Filters / Sort</h2>
         <SortSelect/>
         <RatingSlider/>
+        <GenresFilter/>
       </aside>
     </div>
   );

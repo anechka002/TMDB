@@ -1,6 +1,6 @@
 import {useAppSelector} from "@/shared/hooks";
 import {
-  selectRatingFrom, selectRatingTo,
+  selectRatingFrom, selectRatingTo, selectSelectedGenreIds,
   selectSortBy
 } from "@/widgets/movie-filters/model/filters.slice.ts";
 import {
@@ -18,6 +18,7 @@ export const MoviesGrid = () => {
 
   const ratingFrom = useAppSelector(selectRatingFrom);
   const ratingTo = useAppSelector(selectRatingTo);
+  const selectedGenreIds = useAppSelector(selectSelectedGenreIds)
 
   const debouncedFrom = useDebounce(ratingFrom, 200);
   const debouncedTo = useDebounce(ratingTo, 200);
@@ -27,11 +28,12 @@ export const MoviesGrid = () => {
     page: currentPage,
     vote_average_gte: debouncedFrom,
     vote_average_lte: debouncedTo,
+    with_genres: selectedGenreIds.length ? selectedGenreIds.join(',') : undefined,
   })
 
   useEffect(() => {
     setPage(1)
-  }, [sortBy, debouncedFrom, debouncedTo])
+  }, [sortBy, debouncedFrom, debouncedTo, selectedGenreIds])
 
   if(isLoading) return <p>Loading...</p>
 

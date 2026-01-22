@@ -1,0 +1,21 @@
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.active {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  color: var(--text-color);
+}
+
+.genreButton {
+  border-radius: 9999px;
+  border-color: var(--color-control-border);
+  background-color: var(--color-control-background);
+  color: var(--color-control-text);
+  font-size: 14px;
+  line-height: 1.2;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}

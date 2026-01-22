@@ -1,5 +1,8 @@
 import s from "./FiltersSidebar.module.css";
 import {GenresFilter, RatingSlider, SortSelect} from "@/widgets/movie-filters";
+import {
+  ResetFiltersButton
+} from "@/widgets/movie-filters/ui/ ResetFiltersButton.tsx";
 
 export const FiltersSidebar = () => {
   return (
@@ -9,6 +12,7 @@ export const FiltersSidebar = () => {
         <SortSelect/>
         <RatingSlider/>
         <GenresFilter/>
+        <ResetFiltersButton/>
       </aside>
     </div>
   );

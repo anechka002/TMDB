@@ -36,7 +36,7 @@
   background-color:  var(--header-divider);
   color: var(--text-color);
 }
-.primary:hover:not(:disabled) { background: #008B8BFF; }
+.primary:hover:not(:disabled) { background: var(--accent-color-200); }
 
 .secondary {
   background: #111827;

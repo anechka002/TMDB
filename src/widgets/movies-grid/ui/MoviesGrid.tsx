@@ -1,4 +1,4 @@
-import {useAppSelector} from "@/shared/hooks";
+import {useAppSelector, useDebounce} from "@/shared/hooks";
 import {
   selectRatingFrom, selectRatingTo, selectSelectedGenreIds,
   selectSortBy
@@ -10,7 +10,6 @@ import {usePagination} from "@/features/pagination/model/usePagination.ts";
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
 import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
 import {useEffect} from "react";
-import {useDebounce} from "@/shared/lib";
 
 export const MoviesGrid = () => {
   const sortBy = useAppSelector(selectSortBy)

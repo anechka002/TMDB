@@ -1,7 +1,6 @@
 export {loadFavoritesFromStorage} from './loadFavoritesFromStorage.ts'
 export {getPaginationPages} from './getPaginationPages.ts'
 export {formatRuntime} from './formatRuntime.ts'
-export {useDebounce} from './useDebounce.ts'
 export {handleErrors} from './handleErrors.ts'
 export {isErrorWithProperty} from './isErrorWithProperty.ts'
 export {isErrorWithDetailArray} from './isErrorWithDetailArray.ts'

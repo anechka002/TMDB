@@ -9,6 +9,7 @@ import type {ThemeMode} from "@/shared/types";
 import {
   selectFavoritesMovies
 } from "@/features/favorites/model/favorites-slice.ts";
+import {ToastContainer} from "react-toastify";
 
 function App() {
   const themeMode = useAppSelector(selectThemeMode)
@@ -39,6 +40,7 @@ function App() {
       <div className={s.layout}>
         <Routing/>
       </div>
+      <ToastContainer/>
       <Footer/>
     </div>
   )

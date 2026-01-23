@@ -1,24 +1,14 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type {CategoryType} from "@/features/category-movies/api/categoryMovies.api.types.ts";
 import type {MovieResponse} from "@/entities/movie/api/movie.api.types.ts";
+import {baseApi} from "@/app/api/baseApi.ts";
 
-export const categoryMoviesApi = createApi({
-  reducerPath: 'categoryMoviesApi',
-  baseQuery: fetchBaseQuery({
-    baseUrl: import.meta.env.VITE_BASE_URL,
-    prepareHeaders: (headers) => {
-      headers.set('Authorization', `Bearer ${import.meta.env.VITE_ACCESS_TOKEN}`)
-      return headers
-    },
-  }),
-  tagTypes: ['Movies'],
+export const categoryMoviesApi = baseApi.injectEndpoints({
   endpoints: build => ({
     fetchMoviesByCategory: build.query<MovieResponse, { category: CategoryType; page?: number }>({
       query: ({category, page = 1}) => ({
         url: `/movie/${category}`,
         params: {
           page,
-          api_key: import.meta.env.VITE_API_KEY
         }
       }),
     }),

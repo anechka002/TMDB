@@ -5,21 +5,26 @@ export const appSlice = createSlice({
   name: "app",
   initialState: {
     themeMode: "dark" as ThemeMode,
-    status: "idle" as RequestStatus,
-    error: null as string | null,
-    isLoggedIn: false,
-    isTodolistCreated: false,
+    initialized: false,
+    // status: "idle" as RequestStatus,
+    // error: null as string | null,
+    // isLoggedIn: false,
+    // isTodolistCreated: false,
   },
   selectors: {
     selectThemeMode: (state) => state.themeMode,
-    selectStatus: (state) => state.status,
-    selectError: (state) => state.error,
-    selectIsLoggedIn: (state) => state.isLoggedIn,
-    selectIsTodolistCreated: (state) => state.isTodolistCreated,
+    selectInitialized: (state) => state.initialized,
+    // selectStatus: (state) => state.status,
+    // selectError: (state) => state.error,
+    // selectIsLoggedIn: (state) => state.isLoggedIn,
+    // selectIsTodolistCreated: (state) => state.isTodolistCreated,
   },
   reducers: (create) => ({
     changeThemeModeAC: create.reducer<{ themeMode: ThemeMode }>((state, action) => {
       state.themeMode = action.payload.themeMode
+    }),
+    appInitializedAC: create.reducer((state) => {
+      state.initialized = true
     }),
     // setAppStatus: create.reducer<{ status: RequestStatus }>((state, action) => {
     //   state.status = action.payload.status
@@ -55,7 +60,7 @@ export const appSlice = createSlice({
 })
 export const appReducer = appSlice.reducer
 
-export const { changeThemeModeAC } = appSlice.actions
+export const { changeThemeModeAC, appInitializedAC } = appSlice.actions
 
-export const { selectThemeMode } = appSlice.selectors
+export const { selectThemeMode, selectInitialized } = appSlice.selectors
 

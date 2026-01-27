@@ -12,12 +12,17 @@ import {
 import {ToastContainer} from "react-toastify";
 import {useGlobalLoading} from "@/shared/hooks";
 import {LinearProgress} from "@/entities/movie/ui/LinearProgress.tsx";
+import type {RootState} from "@/app/model/store.ts";
 
 function App() {
   const themeMode = useAppSelector(selectThemeMode)
   const dispatch = useAppDispatch();
   const favorites = useAppSelector(selectFavoritesMovies)
-  const isGlobalLoding = useGlobalLoading()
+  const isGlobalLoading = useGlobalLoading()
+  const initialized = useAppSelector(
+    (state: RootState) => state.app.initialized
+  )
+
 
   useEffect(() => {
     localStorage.setItem("favorites", JSON.stringify(favorites));
@@ -40,7 +45,7 @@ function App() {
   return (
     <div className={s.app}>
       <Header />
-      {isGlobalLoding && <LinearProgress/>}
+      {isGlobalLoading && initialized && <LinearProgress/>}
       <div className={s.layout}>
         <Routing/>
       </div>

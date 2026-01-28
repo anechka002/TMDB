@@ -1,7 +1,7 @@
 import s from './MovieHeader.module.css'
-import {Button} from "@/shared/ui";
 import {MovieRating} from "@/entities/movie/ui/MovieRating.tsx";
 import {formatRuntime} from "@/shared/lib";
+import {Button} from "@/shared";
 
 type Props = {
   onBack: () => void;

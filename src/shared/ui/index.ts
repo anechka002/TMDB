@@ -1,7 +1,0 @@
-export { PageNotFound } from './PageNotFound/PageNotFound.tsx'
-export { Header } from '@/widgets/header/Header.tsx'
-export { TmdbLogo } from './TmdbLogo/TmdbLogo.tsx'
-export { SectionTitle } from './SectionTitle/SectionTitle.tsx'
-export { Button } from './Button/Button.tsx'
-export { Footer } from '@/widgets/footer/Footer.tsx'
-export { HeroBanner } from '@/widgets/hero-banner/HeroBanner.tsx'

@@ -4,8 +4,8 @@ import {
   toggleGenre
 } from "@/widgets/movie-filters/model/filters.slice.ts";
 import s from './GenresFilter.module.css'
-import {Button} from "@/shared/ui";
 import {useGenresMoviesQuery} from "@/features/genres/api/genres.api.ts";
+import {Button} from "@/shared";
 
 export const GenresFilter = () => {
   const dispatch = useAppDispatch()

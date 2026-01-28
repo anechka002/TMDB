@@ -1,8 +1,8 @@
-import {Button} from "@/shared/ui";
 import {useAppDispatch} from "@/shared/hooks";
 import {resetFilters} from "@/widgets/movie-filters/model/filters.slice.ts";
 import s from './ResetFiltersButton.module.css'
 import {usePagination} from "@/features/pagination/model/usePagination.ts";
+import {Button} from "@/shared";
 
 export const ResetFiltersButton = () => {
   const dispatch = useAppDispatch()

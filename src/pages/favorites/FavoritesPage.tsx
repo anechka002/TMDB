@@ -2,9 +2,9 @@ import {
   selectFavoritesMovies
 } from "@/features/favorites/model/favorites-slice.ts";
 import s from "./FavoritesPage.module.css";
-import {SectionTitle} from "@/shared/ui";
 import {useAppSelector} from "@/shared/hooks";
 import {FavoriteMovieCard} from "@/features/favorites/ui/FavoriteMovieCard.tsx";
+import {SectionTitle} from "@/shared";
 
 export const FavoritesPage = () => {
   const favoritesMovies = useAppSelector(selectFavoritesMovies)

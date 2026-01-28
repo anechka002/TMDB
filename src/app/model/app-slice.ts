@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import type {RequestStatus, ThemeMode} from "@/shared/types";
+import type {ThemeMode} from "@/shared/types";
 
 export const appSlice = createSlice({
   name: "app",

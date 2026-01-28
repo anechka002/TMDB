@@ -1,5 +1,5 @@
 import s from './App.module.css'
-import {Footer, Header} from "@/shared/ui";
+import {Footer, Header} from "@/widgets";
 import {Routing} from "@/app/routing";
 import {useAppSelector} from "@/shared/hooks/useAppSelector.ts";
 import {changeThemeModeAC, selectThemeMode} from "@/app/model/app-slice.ts";

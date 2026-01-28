@@ -1,12 +1,12 @@
 import {Navigate, Route, Routes} from "react-router";
 import {MainPage} from "@/pages/main/MainPage.tsx";
 import {CategoryPage} from "@/pages/category/CategoryPage.tsx";
-import {PageNotFound} from "@/shared/ui";
 import {Path} from "@/app/routing/paths.ts";
 import {FavoritesPage} from "@/pages/favorites/FavoritesPage.tsx";
 import {SearchPage} from "@/pages/search/SearchPage.tsx";
 import {MovieDetailsPage} from "@/pages/movie-details/MovieDetailsPage.tsx";
 import {FilteredMoviesPage} from "@/pages/filtered-movies";
+import {PageNotFound} from "@/shared";
 
 export const Routing = () => (
   <Routes>

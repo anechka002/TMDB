@@ -1,4 +1,3 @@
-import {SectionTitle} from "@/shared/ui";
 import {SearchResults} from "@/features/search/ui/SearchResults.tsx";
 import {SearchEmptyState} from "@/features/search/ui/SearchEmptyState.tsx";
 import {
@@ -8,6 +7,8 @@ import {useSearchParams} from "react-router";
 import {usePagination} from "@/features/pagination/model/usePagination.ts";
 import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
 import {useSearchMoviesQuery} from "@/features/search/api/search.api.ts";
+import {SectionTitle} from "@/shared";
+import {SearchPageSkeleton} from "@/pages/search/SearchPageSkeleton.tsx";
 
 export const SearchPage = () => {
 
@@ -45,6 +46,10 @@ export const SearchPage = () => {
   }
 
   const results = search ? (data?.results ?? []) : [];
+
+  if (!data && isFetching) {
+    return <SearchPageSkeleton />
+  }
 
   return (
     <>

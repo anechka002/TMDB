@@ -1,5 +1,4 @@
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
-import {SectionTitle} from "@/shared/ui";
 import {CategoryTabs} from "@/features/category-movies/ui/CategoryTabs.tsx";
 import {useParams} from "react-router";
 import type {CategoryType} from "@/features/category-movies/api/categoryMovies.api.types.ts";
@@ -10,11 +9,12 @@ import {
   useFetchMoviesByCategoryQuery
 } from "@/features/category-movies/api/categoryMovies.api.ts";
 import {
-  CategorySkeleton
-} from "@/features/category-movies/ui/CategorySkeleton.tsx";
-import {useAppDispatch, useAppSelector} from "@/shared/hooks";
+  CategoryPageSkeleton
+} from "@/pages/category/CategoryPageSkeleton.tsx";
+import {useAppDispatch} from "@/shared/hooks";
 import {useEffect} from "react";
-import {appInitializedAC, selectInitialized} from "@/app/model/app-slice.ts";
+import {appInitializedAC} from "@/app/model/app-slice.ts";
+import {SectionTitle} from "@/shared";
 
 
 export const CategoryPage = () => {
@@ -27,7 +27,6 @@ export const CategoryPage = () => {
     page: currentPage
   });
 
-  const isInitialized = useAppSelector(selectInitialized)
   const dispatch = useAppDispatch();
 
   useEffect(() => {
@@ -39,9 +38,13 @@ export const CategoryPage = () => {
   const current =
     categories.find(c => c.type === categoryType) ?? categories[0]
 
-  const skeletons = [...new Array(5)].map((_, i) => <CategorySkeleton key={i}/> );
+  // const skeletons = [...new Array(5)].map((_, i) => <CategorySkeleton key={i}/> );
 
-  if (!isInitialized && isFetching) return skeletons
+  // if (!isInitialized && isFetching) return skeletons
+
+  if (!data && isFetching) {
+    return <CategoryPageSkeleton />
+  }
 
   return (
     <>

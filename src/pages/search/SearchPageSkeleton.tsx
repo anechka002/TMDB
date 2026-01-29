@@ -1,12 +1,21 @@
 import {MoviesGridSkeleton, TitleSkeleton} from "@/shared";
 import s from './SearchPage.module.css'
+import {SearchSkeleton} from "@/shared/ui/Skeletons/SearchSkeleton.tsx";
 
 export const SearchPageSkeleton = () => {
   return (
-    <div style={{marginTop: '50px'}} className={s.skeleton}>
-      <TitleSkeleton/>
+    <div className={s.skeleton}>
       <div>
-        <MoviesGridSkeleton/>
+        <TitleSkeleton/>
+      </div>
+      <div>
+        <SearchSkeleton/>
+      </div>
+      <div>
+        <TitleSkeleton/>
+      </div>
+      <div>
+        <MoviesGridSkeleton count={5}/>
       </div>
     </div>
   );

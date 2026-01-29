@@ -5,7 +5,7 @@ export const baseApi = createApi({
   reducerPath: 'baseApi',
   tagTypes: ['Movies', 'Movie', 'Credits', 'Similar'],
   baseQuery: async (args, api, extraOptions) => {
-    await new Promise(resolve => setTimeout(resolve, 10000)) // delay
+    await new Promise(resolve => setTimeout(resolve, 5000)) // delay
     const result = await fetchBaseQuery({
       baseUrl: import.meta.env.VITE_BASE_URL,
       prepareHeaders: headers => {

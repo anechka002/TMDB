@@ -1,13 +1,10 @@
-import {useRandomPopularBackdrop} from "@/shared/hooks";
 import s from './HeroBanner.module.css'
 import {IMAGE_BANNER_URL} from "@/shared/config";
 import {SearchInput} from "@/features/search/ui/SearchInput.tsx";
 import {createSearchParams, useNavigate} from "react-router";
 
-export const HeroBanner = () => {
+export const HeroBanner = ({backdrop}: {backdrop: string | null}) => {
   const navigate = useNavigate();
-
-  const {backdrop, isLoading} = useRandomPopularBackdrop()
 
   const handleSearch = (value: string) => {
     if (!value.trim()) return;
@@ -16,8 +13,6 @@ export const HeroBanner = () => {
       search: createSearchParams({query: value}).toString()
     });
   }
-
-  if(!backdrop || isLoading) return null
 
   return (
     <section

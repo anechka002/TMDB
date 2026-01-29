@@ -2,13 +2,13 @@ import ContentLoader from "react-content-loader";
 
 type Props = {
   width: string;
+  height: string;
 }
 
-export const MovieCardSkeleton = ({width}: Props) => {
+export const MovieCardSkeleton = ({width, height}: Props) => {
   return (
-    <ContentLoader width={width} height={375}>
-      <rect x="0" y="325" rx="10" ry="10" width="180" height="25" />
-      <rect x="0" y="10" rx="10" ry="10" width="200" height="300" />
+    <ContentLoader width={width} height={height}>
+      <rect x="0" y="20" rx="10" ry="10" width={width} height={height} />
     </ContentLoader>
   );
 };

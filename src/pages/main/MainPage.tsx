@@ -4,11 +4,19 @@ import {
 } from "@/features/category-movies/ui/CategoryPreview.tsx";
 import {categories} from "@/features/category-movies/model/categories.ts";
 import {HeroBanner} from "@/widgets";
+import {useRandomPopularBackdrop} from "@/shared/hooks";
+import {MainPageSkeleton} from "@/pages/main/MainPageSkeleton.tsx";
 
 export const MainPage = () => {
+  const {backdrop, isLoading} = useRandomPopularBackdrop()
+
+  if(isLoading) return <MainPageSkeleton/>
+
+  if(!backdrop) return null
+
   return (
     <div className={s.main}>
-      <HeroBanner/>
+      <HeroBanner backdrop={backdrop} />
       {categories.map(category => (
         <CategoryPreview key={category.type} category={category.type} title={category.title} />
       ))}

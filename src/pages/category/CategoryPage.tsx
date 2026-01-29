@@ -22,7 +22,7 @@ export const CategoryPage = () => {
 
   const {currentPage, setPage} = usePagination()
 
-  const {data, isFetching} = useFetchMoviesByCategoryQuery({
+  const {data, isLoading} = useFetchMoviesByCategoryQuery({
     category: categoryType as CategoryType,
     page: currentPage
   });
@@ -38,11 +38,7 @@ export const CategoryPage = () => {
   const current =
     categories.find(c => c.type === categoryType) ?? categories[0]
 
-  // const skeletons = [...new Array(5)].map((_, i) => <CategorySkeleton key={i}/> );
-
-  // if (!isInitialized && isFetching) return skeletons
-
-  if (!data && isFetching) {
+  if (isLoading) {
     return <CategoryPageSkeleton />
   }
 

@@ -10,6 +10,7 @@ import {usePagination} from "@/features/pagination/model/usePagination.ts";
 import {CategoryList} from "@/features/category-movies/ui/CategoryList.tsx";
 import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
 import {useEffect} from "react";
+import {MoviesGridSkeleton} from "@/shared";
 
 export const MoviesGrid = () => {
   const sortBy = useAppSelector(selectSortBy)
@@ -34,7 +35,7 @@ export const MoviesGrid = () => {
     setPage(1)
   }, [sortBy, debouncedFrom, debouncedTo, selectedGenreIds])
 
-  if(isLoading) return <p>Loading...</p>
+  if(isLoading) return <MoviesGridSkeleton count={15} width={'150px'} height={'200px'} />
 
   return (
     <div>

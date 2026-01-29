@@ -14,11 +14,8 @@ export const MovieInfo = ({movieId}: {movieId: string}) => {
   const navigate = useNavigate();
   const state = location.state as LocationState | null;
 
-  // console.log(location)
-
   const handleClickBack = () => {
     navigate(state?.from ?? '/movies/popular', {replace: true});
-    // navigate(-1)
   }
 
   if (isLoading || !data) return null;

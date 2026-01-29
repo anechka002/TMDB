@@ -9,7 +9,7 @@ export const CategoryPageSkeleton = () => {
       </div>
       <TitleSkeleton/>
       <div className={s.items}>
-        <MoviesGridSkeleton/>
+        <MoviesGridSkeleton />
       </div>
     </div>
   );

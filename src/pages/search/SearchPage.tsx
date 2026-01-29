@@ -18,7 +18,7 @@ export const SearchPage = () => {
 
   const search = searchParams.get("query") ?? '';
 
-  const {data, isLoading, isFetching} = useSearchMoviesQuery(
+  const {currentData, data, isLoading, isFetching} = useSearchMoviesQuery(
     {query: search, page: currentPage},
     {skip: !search}
   )
@@ -45,7 +45,7 @@ export const SearchPage = () => {
     setSearchParams({});
   }
 
-  const results = search ? (data?.results ?? []) : [];
+  const results = search ? (currentData?.results ?? []) : [];
 
   if (isLoading) {
     return <SearchPageSkeleton />

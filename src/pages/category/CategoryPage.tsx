@@ -11,9 +11,6 @@ import {
 import {
   CategoryPageSkeleton
 } from "@/pages/category/CategoryPageSkeleton.tsx";
-import {useAppDispatch} from "@/shared/hooks";
-import {useEffect} from "react";
-import {appInitializedAC} from "@/app/model/app-slice.ts";
 import {SectionTitle} from "@/shared";
 
 
@@ -26,14 +23,6 @@ export const CategoryPage = () => {
     category: categoryType as CategoryType,
     page: currentPage
   });
-
-  const dispatch = useAppDispatch();
-
-  useEffect(() => {
-    if(data) {
-      dispatch(appInitializedAC())
-    }
-  }, [data, dispatch]);
 
   const current =
     categories.find(c => c.type === categoryType) ?? categories[0]

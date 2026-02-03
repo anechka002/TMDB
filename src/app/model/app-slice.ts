@@ -5,62 +5,19 @@ export const appSlice = createSlice({
   name: "app",
   initialState: {
     themeMode: "dark" as ThemeMode,
-    initialized: false,
-    // status: "idle" as RequestStatus,
-    // error: null as string | null,
-    // isLoggedIn: false,
-    // isTodolistCreated: false,
   },
   selectors: {
     selectThemeMode: (state) => state.themeMode,
-    selectInitialized: (state) => state.initialized,
-    // selectStatus: (state) => state.status,
-    // selectError: (state) => state.error,
-    // selectIsLoggedIn: (state) => state.isLoggedIn,
-    // selectIsTodolistCreated: (state) => state.isTodolistCreated,
   },
   reducers: (create) => ({
     changeThemeModeAC: create.reducer<{ themeMode: ThemeMode }>((state, action) => {
       state.themeMode = action.payload.themeMode
     }),
-    appInitializedAC: create.reducer((state) => {
-      state.initialized = true
-    }),
-    // setAppStatus: create.reducer<{ status: RequestStatus }>((state, action) => {
-    //   state.status = action.payload.status
-    // }),
-    // setAppError: create.reducer<{ error: null | string }>((state, action) => {
-    //   state.error = action.payload.error
-    // }),
-    // setIsLoggedIn: create.reducer<{ isLoggedIn: boolean }>((state, action) => {
-    //   state.isLoggedIn = action.payload.isLoggedIn
-    // }),
-    // setIsTodolistCreated: create.reducer<boolean>((state, action) => {
-    //   state.isTodolistCreated = action.payload
-    // })
   }),
-  // extraReducers: (builder) => {
-  //   builder
-  //     .addMatcher(isPending, (state, action) => {
-  //       if (
-  //         todolistsApi.endpoints.getTodolists.matchPending(action) ||
-  //         tasksApi.endpoints.getTasks.matchPending(action)
-  //       ) {
-  //         return
-  //       }
-  //       state.status = "loading"
-  //     })
-  //     .addMatcher(isFulfilled, (state) => {
-  //       state.status = "succeeded"
-  //     })
-  //     .addMatcher(isRejected, (state) => {
-  //       state.status = "failed"
-  //     })
-  // },
 })
 export const appReducer = appSlice.reducer
 
-export const { changeThemeModeAC, appInitializedAC } = appSlice.actions
+export const { changeThemeModeAC } = appSlice.actions
 
-export const { selectThemeMode, selectInitialized } = appSlice.selectors
+export const { selectThemeMode } = appSlice.selectors
 

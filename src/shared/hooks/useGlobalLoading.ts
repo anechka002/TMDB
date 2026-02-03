@@ -58,8 +58,6 @@ export const useGlobalLoading = () => {
   //     return !excludedEndpoints.includes(query.endpointName);
   //   })
 
-
-
     const hasActiveMutations = mutations.some(mutation => mutation?.status === 'pending')
 
     return hasActiveQueries || hasActiveMutations

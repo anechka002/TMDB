@@ -26,13 +26,15 @@ export const MoviesGrid = () => {
   const { data, isLoading } = useDiscoverMoviesQuery({
     sort_by: sortBy,
     page: currentPage,
-    vote_average_gte: debouncedFrom,
-    vote_average_lte: debouncedTo,
+    vote_average_gte: debouncedFrom > 0 ? debouncedFrom : undefined,
+    vote_average_lte: debouncedTo < 10 ? debouncedTo : undefined,
     with_genres: selectedGenreIds.length ? selectedGenreIds.join(',') : undefined,
   })
 
   useEffect(() => {
-    setPage(1)
+    if(currentPage !== 1) {
+      setPage(1)
+    }
   }, [sortBy, debouncedFrom, debouncedTo, selectedGenreIds])
 
   if(isLoading) return <MoviesGridSkeleton count={15} width={'150px'} height={'200px'} />

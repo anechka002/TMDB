@@ -18,7 +18,7 @@ export const favoritesSlice = createSlice({
     selectIsFavorite: (state, movieId: number) => {
       return state.favoritesMovies.some(m => m.id === movieId)
     },
-    // весь список избранных (например, для страницы Favorites)
+    // весь список избранных (для страницы Favorites)
     selectFavoritesMovies: (state) => state.favoritesMovies
   },
   reducers: (create) => ({

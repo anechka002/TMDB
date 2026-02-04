@@ -8,10 +8,11 @@ import {SectionTitle} from "@/shared";
 
 export const FavoritesPage = () => {
   const favoritesMovies = useAppSelector(selectFavoritesMovies)
+
   return (
     <>
       <SectionTitle title={'Favorites'}/>
-      <p className={s.title}>Favorite Movies</p>
+      {favoritesMovies.length === 0 && <p className={s.title}>Add movies to favorites to see them on this page.</p>}
       <div className={s.favoritesCards}>
         {favoritesMovies.map((movie) => (<FavoriteMovieCard key={movie.id} movie={movie}/>))}
       </div>

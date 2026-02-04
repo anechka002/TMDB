@@ -5,6 +5,7 @@
 }
 
 .title {
-  margin-bottom: 15px;
-  font-size: 22px;
+  margin: 0;
+  font-size: 16px;
+  color: var(--color-gray-600);
 }

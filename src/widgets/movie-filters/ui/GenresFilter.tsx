@@ -6,6 +6,7 @@ import {
 import s from './GenresFilter.module.css'
 import {Button} from "@/shared";
 import type {Genre} from "@/features/genres/model/types.ts";
+import clsx from "clsx";
 
 export const GenresFilter = ({genres}: {genres: Genre[]}) => {
   const dispatch = useAppDispatch()
@@ -16,7 +17,7 @@ export const GenresFilter = ({genres}: {genres: Genre[]}) => {
       {genres?.map((genre) => (
         <Button
           key={genre.id}
-          className={selectedId.includes(genre.id) ? s.active : s.genreButton}
+          className={clsx(s.genreButton, selectedId.includes(genre.id) && s.active)}
           onClick={() => dispatch(toggleGenre(genre.id))}
         >{genre.name}</Button>
       ))}

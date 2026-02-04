@@ -8,7 +8,7 @@ type Props = {
 export const MovieCardSkeleton = ({width, height}: Props) => {
   return (
     <ContentLoader width={width} height={height}>
-      <rect x="0" y="20" rx="10" ry="10" width={width} height={height} />
+      <rect x="10" y="20" rx="0" ry="0" width={width} height={height} />
     </ContentLoader>
   );
 };

@@ -1,12 +1,34 @@
-.title {
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  min-height: calc(100vh - 160px);
+  padding: 64px 16px;
   text-align: center;
-  font-size: 250px;
+}
+
+.imageWrapper {
+  max-width: 360px;
+  width: 100%;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 16px;
+}
+
+.title {
+  font-size: 56px;
+  font-weight: 700;
   margin: 0;
 }
 
 .subtitle {
-  text-align: center;
-  font-size: 50px;
+  font-size: 18px;
   margin: 0;
-  text-transform: uppercase;
+  color: var(--color-gray-600);
 }

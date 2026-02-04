@@ -45,7 +45,10 @@ export const filtersSlice = createSlice({
       }
     }),
     resetFilters: create.reducer(() => {
-      return initialState
+      return {
+        ...initialState,
+        selectedGenreIds: []
+      }
     })
   }),
 })

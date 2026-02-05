@@ -8,7 +8,7 @@ import {usePagination} from "@/features/pagination/model/usePagination.ts";
 import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
 import {useSearchMoviesQuery} from "@/features/search/api/search.api.ts";
 import {SectionTitle} from "@/shared";
-import {SearchPageSkeleton} from "@/pages/search/SearchPageSkeleton.tsx";
+import {SearchPageSkeleton} from "@/pages/search";
 
 export const SearchPage = () => {
 

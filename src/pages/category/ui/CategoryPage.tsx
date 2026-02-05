@@ -8,11 +8,8 @@ import {Pagination} from "@/features/pagination/ui/Pagination.tsx";
 import {
   useFetchMoviesByCategoryQuery
 } from "@/features/category-movies/api/categoryMovies.api.ts";
-import {
-  CategoryPageSkeleton
-} from "@/pages/category/CategoryPageSkeleton.tsx";
 import {SectionTitle} from "@/shared";
-
+import {CategoryPageSkeleton} from "@/pages/category";
 
 export const CategoryPage = () => {
   const { categoryType = 'popular' } = useParams<{ categoryType: string }>();

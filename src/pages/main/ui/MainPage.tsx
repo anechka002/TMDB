@@ -5,7 +5,7 @@ import {
 import {categories} from "@/features/category-movies/model/categories.ts";
 import {HeroBanner} from "@/widgets";
 import {useRandomPopularBackdrop} from "@/shared/hooks";
-import {MainPageSkeleton} from "@/pages/main/MainPageSkeleton.tsx";
+import {MainPageSkeleton} from "@/pages/main";
 
 export const MainPage = () => {
   const {backdrop, isLoading} = useRandomPopularBackdrop()

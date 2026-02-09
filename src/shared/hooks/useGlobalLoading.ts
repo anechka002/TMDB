@@ -23,11 +23,10 @@ export const useGlobalLoading = () => {
     const queries = Object.values(state.baseApi.queries || {})
     const mutations = Object.values(state.baseApi.mutations || {})
 
-    // // Проверяем, есть ли активные запросы (статус 'pending')
+    // Проверяем, есть ли активные запросы (статус 'pending')
     // const hasActiveQueries = queries.some(query => query?.status === 'pending')
     // const hasActiveMutations = mutations.some(mutation => mutation?.status === 'pending')
 
-    // 1 var
     const hasEverFulfilledByEndpoint = new Set(
       queries
         .filter((q) => q?.status === "fulfilled" && q.endpointName)
@@ -43,20 +42,6 @@ export const useGlobalLoading = () => {
       // “особые” эндпоинты: показываем только если это не первый раз
       return hasEverFulfilledByEndpoint.has(q.endpointName);
     });
-
-    // 2var
-  // //  Проверяем, есть ли активные запросы (статус 'pending')
-  //   const hasActiveQueries = queries.some(query => {
-  //     // if (query?.status !== 'pending') return
-  //     // if (excludedEndpoints.includes(query.endpointName)) {
-  //     //   const completedQueries = queries.filter(q => q?.status === 'fulfilled')
-  //     //   return completedQueries.length > 0
-  //     // }
-  //     if (!query) return false;
-  //     if (query.status !== "pending") return false;
-  //     if (!query.endpointName) return false;
-  //     return !excludedEndpoints.includes(query.endpointName);
-  //   })
 
     const hasActiveMutations = mutations.some(mutation => mutation?.status === 'pending')
 

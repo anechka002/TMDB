@@ -11,7 +11,7 @@ import {
 } from "@/features/favorites/model/favorites-slice.ts";
 import {ToastContainer} from "react-toastify";
 import {useGlobalLoading} from "@/shared/hooks";
-import {LinearProgress} from "@/entities/movie/ui/LinearProgress.tsx";
+import {LinearProgress} from "@/shared";
 
 function App() {
   const themeMode = useAppSelector(selectThemeMode)
